@@ -577,47 +577,147 @@ iframe {
 <script>
   // Subjects configuration database with game links
   const gameDatabase = {
-    science: [
-      
-     {
-  name: "বাংলা ১ম",
-  icon: "fa-language",
-  link: "aecher%20GAME/game.html"
-},
-{
-  name: "বাংলা ২য়",
-  icon: "fa-language",
-  link: "aecher%20GAME/game.html"
-},
-      { name: "ইংরেজি ১ম ও ২য়", icon: "fa-font",links: "https://forhadplays-stack.github.io/EduBangla/aecher%20GAME/game.html" },
-      { name: "ICT", icon: "fa-laptop-code", link: "https://forhadplays-stack.github.io/EduBangla/aecher%20GAME/game.html" },
-      { name: "পদার্থবিজ্ঞান", icon: "fa-magnet", links: "https://forhadplays-stack.github.io/EduBangla/aecher%20GAME/game.html" },
-      { name: "রসায়ন", icon: "fa-flask", link: "http://127.0.0.1:5500/games/chemistry.html" },
-      { name: "উচ্চতর গণিত", icon: "fa-calculator", link: "http://127.0.0.1:5500/games/higher-math.html" },
-      { name: "জীববিজ্ঞান", icon: "fa-dna", link: "http://127.0.0.1:5500/games/biology.html" }
-    ],
-    commerce: [
-      { name: "বাংলা ১ম ", icon: "fa-language", links: "https://forhadplays-stack.github.io/EduBangla/aecher%20GAME/game.html" },
-      { name: "বাংলা ২য়", icon: "fa-language", links: "https://forhadplays-stack.github.io/EduBangla/aecher%20GAME/game.html" },
-      { name: "ইংরেজি ১ম ও ২য়", icon: "fa-font", link: "http://127.0.0.1:5500/games/english.html" },
-      { name: "ICT", icon: "fa-laptop-code", link: "http://127.0.0.1:5500/games/ict.html" },
-      { name: "হিসাববিজ্ঞান", icon: "fa-file-invoice-dollar", link: "http://127.0.0.1:5500/games/accounting.html" },
-      { name: "ফিন্যান্স ও ব্যাংকিং", icon: "fa-piggy-bank", link: "http://127.0.0.1:5500/games/finance.html" },
-      { name: "ব্যবসায় উদ্যোগ", icon: "fa-briefcase", link: "http://127.0.0.1:5500/games/business.html" },
-      { name: "ব্যবস্থাপনা", icon: "fa-sitemap", link: "http://127.0.0.1:5500/games/management.html" }
-    ],
-    arts: [
-      { name: "বাংলা ১ম ", icon: "fa-language",links: "https://forhadplays-stack.github.io/EduBangla/aecher%20GAME/game.html" },
-      { name: "বাংলা ২য়", icon: "fa-language", links: "https://forhadplays-stack.github.io/EduBangla/aecher%20GAME/game.html" },
-      { name: "ইংরেজি ১ম ও ২য়", icon: "fa-font", link: "http://127.0.0.1:5500/games/english.html" },
-      { name: "ICT", icon: "fa-laptop-code", link: "http://127.0.0.1:5500/games/ict.html" },
-      { name: "ইতিহাস", icon: "fa-landmark", link: "http://127.0.0.1:5500/games/history.html" },
-      { name: "পৌরনীতি ও সুশাসন", icon: "fa-scale-balanced", link: "http://127.0.0.1:5500/games/civics.html" },
-      { name: "অর্থনীতি", icon: "fa-coins", link: "http://127.0.0.1:5500/games/economics.html" },
-      { name: "ভূগোল", icon: "fa-earth-americas", link: "http://127.0.0.1:5500/games/geography.html" },
-      { name: "সমাজবিজ্ঞান", icon: "fa-users-gear", link: "http://127.0.0.1:5500/games/sociology.html" }
-    ]
-  };
+   science: [
+
+  {
+    name: "বাংলা ১ম",
+    icon: "fa-language",
+    link: "aecher%20GAME/game.html"
+  },
+  {
+    name: "বাংলা ২য়",
+    icon: "fa-language",
+    link: "aecher%20GAME/game.html"
+  },
+  {
+    name: "ইংরেজি ১ম ও ২য়",
+    icon: "fa-font",
+    link: "aecher%20GAME/game.html"
+  },
+  {
+    name: "ICT",
+    icon: "fa-laptop-code",
+    link: "aecher%20GAME/game.html"
+  },
+  {
+    name: "পদার্থবিজ্ঞান",
+    icon: "fa-magnet",
+    link: "aecher%20GAME/game.html"
+  },
+  {
+    name: "রসায়ন",
+    icon: "fa-flask",
+    link: "aecher%20GAME/game.html"
+  },
+  {
+    name: "উচ্চতর গণিত",
+    icon: "fa-calculator",
+    link: "aecher%20GAME/game.html"
+  },
+  {
+    name: "জীববিজ্ঞান",
+    icon: "fa-dna",
+    link: "aecher%20GAME/game.html"
+  }
+
+],
+
+commerce: [
+
+  {
+    name: "বাংলা ১ম",
+    icon: "fa-language",
+    link: "aecher%20GAME/game.html"
+  },
+  {
+    name: "বাংলা ২য়",
+    icon: "fa-language",
+    link: "aecher%20GAME/game.html"
+  },
+  {
+    name: "ইংরেজি ১ম ও ২য়",
+    icon: "fa-font",
+    link: "aecher%20GAME/game.html"
+  },
+  {
+    name: "ICT",
+    icon: "fa-laptop-code",
+    link: "aecher%20GAME/game.html"
+  },
+  {
+    name: "হিসাববিজ্ঞান",
+    icon: "fa-file-invoice-dollar",
+    link: "aecher%20GAME/game.html"
+  },
+  {
+    name: "ফিন্যান্স ও ব্যাংকিং",
+    icon: "fa-piggy-bank",
+    link: "aecher%20GAME/game.html"
+  },
+  {
+    name: "ব্যবসায় উদ্যোগ",
+    icon: "fa-briefcase",
+    link: "aecher%20GAME/game.html"
+  },
+  {
+    name: "ব্যবস্থাপনা",
+    icon: "fa-sitemap",
+    link: "aecher%20GAME/game.html"
+  }
+
+],
+
+arts: [
+
+  {
+    name: "বাংলা ১ম",
+    icon: "fa-language",
+    link: "aecher%20GAME/game.html"
+  },
+  {
+    name: "বাংলা ২য়",
+    icon: "fa-language",
+    link: "aecher%20GAME/game.html"
+  },
+  {
+    name: "ইংরেজি ১ম ও ২য়",
+    icon: "fa-font",
+    link: "aecher%20GAME/game.html"
+  },
+  {
+    name: "ICT",
+    icon: "fa-laptop-code",
+    link: "aecher%20GAME/game.html"
+  },
+  {
+    name: "ইতিহাস",
+    icon: "fa-landmark",
+    link: "aecher%20GAME/game.html"
+  },
+  {
+    name: "পৌরনীতি ও সুশাসন",
+    icon: "fa-scale-balanced",
+    link: "aecher%20GAME/game.html"
+  },
+  {
+    name: "অর্থনীতি",
+    icon: "fa-coins",
+    link: "aecher%20GAME/game.html"
+  },
+  {
+    name: "ভূগোল",
+    icon: "fa-earth-americas",
+    link: "aecher%20GAME/game.html"
+  },
+  {
+    name: "সমাজবিজ্ঞান",
+    icon: "fa-users-gear",
+    link: "aecher%20GAME/game.html"
+  }
+
+]
+
+};
 
   // Opens the Group Selection Area
   function openGamePortal() {
