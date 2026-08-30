@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-<title>Master Archery MCQ Game - Perfect Responsive Edition</title>
+<title>Master Archery MCQ Game - Ultra Smooth Edition</title>
 <style>
 * {
   box-sizing: border-box;
@@ -74,19 +74,51 @@ html, body {
 .hud-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .hud-card {
   background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(12px);
   color: #fff;
-  padding: 8px 18px;
+  padding: 8px 14px;
   border-radius: 20px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 800;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* ডানপাশে প্রশ্ন সংখ্যা এবং তার নিচে রিসেট বাটনের কন্টেইনার */
+.hud-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+/* প্রিমিয়াম গ্লাসমোরফিজম পিল-স্টাইল রিসেট বাটন */
+.reset-btn {
+  background: rgba(239, 68, 68, 0.25);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(248, 113, 113, 0.5);
+  color: #fca5a5;
+  padding: 5px 12px;
+  border-radius: 14px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.reset-btn:active {
+  transform: scale(0.92);
+  background: rgba(239, 68, 68, 0.45);
 }
 
 #question-box {
@@ -144,8 +176,15 @@ html, body {
   <div id="ui-layer">
     <div class="hud-header">
       <div class="hud-card">স্কোর: <span id="score-val" style="color:#facc15">০</span></div>
-      <div class="hud-card">প্রশ্ন: <span id="q-num" style="color:#38bdf8">১</span>/<span id="q-total">৪</span></div>
+      
+      <div class="hud-right">
+        <div class="hud-card">প্রশ্ন: <span id="q-num" style="color:#38bdf8">১</span>/<span id="q-total">৩০</span></div>
+        <button class="reset-btn" id="reset-btn" title="নতুন করে শুরু করুন">
+          <span>🔄</span> রিসেট
+        </button>
+      </div>
     </div>
+    
     <div id="question-box">প্রশ্ন লোড হচ্ছে...</div>
     <div></div>
   </div>
@@ -161,10 +200,25 @@ const scoreVal = document.getElementById('score-val');
 const qNum = document.getElementById('q-num');
 const qTotal = document.getElementById('q-total');
 const feedbackPopup = document.getElementById('feedback-popup');
+const resetBtn = document.getElementById('reset-btn');
 
 let gameWidth = 0;
 let gameHeight = 0;
 let dpr = 1;
+
+function drawRoundedRect(ctx, x, y, width, height, radius) {
+  ctx.beginPath();
+  ctx.moveTo(x + radius, y);
+  ctx.lineTo(x + width - radius, y);
+  ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+  ctx.lineTo(x + width, y + height - radius);
+  ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+  ctx.lineTo(x + radius, y + height);
+  ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+  ctx.lineTo(x, y + radius);
+  ctx.quadraticCurveTo(x, y, x + radius, y);
+  ctx.closePath();
+}
 
 function resizeCanvas() {
   dpr = window.devicePixelRatio || 1;
@@ -209,7 +263,7 @@ const quizData = [
   { question: "'আমি বক্তাও নহি। আমি কমবক্তার দলে'—উক্তির তাৎপর্য কোনটি?", options: ["কাজে নয়, কথায় বিশ্বাসী", "কথায় নয়, কাজে বিশ্বাসী", "কম কথার গুরুত্ব বেশি", "প্রাবন্ধিক নিজে কম কথায় বিশ্বাসী"], answer: 1 },
   { question: "'আমি কমবক্তার দলে'—উক্তিটি কে করেছেন?", options: ["জসীমউদ্দীন", "কাজী নজরুল ইসলাম", "আবুজাফর শামসুদ্দীন", "শরৎচন্দ্র চট্টোপাধ্যায়"], answer: 1 },
   { question: "'আমি কমবক্তার দলে'—এখানে 'কমবক্তা' বলা যায় কাদের?", options: ["চঞ্চলদের", "ধ্যানীদের", "অলসদের", "জ্ঞানীদের"], answer: 1 },
-  { question: "'যৌবনের গান' প্রবন্ধে কোন কোন নদীর নাম আছে?", options: ["পদ্মা ও ভাগীরথী", "কর্ণফুলী ও যমুনা", "মেঘনা ও সুরমা", "বুড়িগঙ্গা ও শীতলক্ষ্যা"], answer: 0 },
+  { question: "যৌবনের গান' প্রবন্ধে কোন কোন নদীর নাম আছে?", options: ["পদ্মা ও ভাগীরথী", "কর্ণফুলী ও যমুনা", "মেঘনা ও সুরমা", "বুড়িগঙ্গা ও শীতলক্ষ্যা"], answer: 0 },
   { question: "আমার প্রথম জাগরণ প্রভাতে' কথাটি দ্বারা কোনটি বোঝানো হয়েছে?", options: ["সচেতনতার সূচনা লগ্নকে", "নিদ্রাভঙ্গের সূচনা লগ্নকে", "লেখালেখির সূচনা লগ্নকে", "বিদ্রোহের সূচনা লগ্নকে"], answer: 0 },
   { question: "বার্ধক্যের বৈশিষ্ট্য কী?", options: ["নতুনের পথে উৎসাহ দান", "পশ্চাৎপদতায় আবদ্ধ", "প্রগতির পথে অগ্রসরমান", "বয়সের ভারে ন্যুজপ্রায়"], answer: 1 },
   { question: "বৃদ্ধরা মিথ্যাকে, মৃত্যুকে আঁকড়ে ধরে কেন?", options: ["উদ্যমী বলে", "সাহসী বলে", "প্রাণচাঞ্চল্য নেই বলে", "অলস বলে"], answer: 2 },
@@ -357,7 +411,7 @@ class ConfettiParticle {
   draw() {
     ctx.save();
     ctx.globalAlpha = this.alpha;
-    ctx.translate(this.x, this.y);
+    ctx.translate(Math.round(this.x), Math.round(this.y));
     ctx.rotate(this.rotation);
     ctx.fillStyle = this.color;
     ctx.fillRect(-this.size / 2, -this.size / 2, this.size, this.size);
@@ -395,7 +449,7 @@ class Balloon {
     this.index = index;
     this.text = text;
     this.theme = balloonThemes[index % balloonThemes.length];
-    this.speed = 0.8 + Math.random() * 0.4;
+    this.speed = 0.9 + Math.random() * 0.3;
     this.swing = Math.random() * Math.PI * 2;
     this.popped = false;
   }
@@ -403,29 +457,33 @@ class Balloon {
     if(this.popped) return;
     ctx.save();
     
-    // String
+    // কাঁপুনির স্থায়ী সমাধানের জন্য Math.round দিয়ে পিক্সেল নিখুঁত করা হয়েছে
+    const drawX = Math.round(this.x);
+    const drawY = Math.round(this.y);
+
+    // String (দড়ি)
     ctx.beginPath();
-    ctx.moveTo(this.x, this.y + this.ry);
-    ctx.quadraticCurveTo(this.x + Math.sin(this.swing)*8, this.y + this.ry + 20, this.x, this.y + this.ry + 35);
+    ctx.moveTo(drawX, drawY + this.ry);
+    ctx.quadraticCurveTo(drawX + Math.sin(this.swing)*6, drawY + this.ry + 20, drawX, drawY + this.ry + 35);
     ctx.strokeStyle = 'rgba(255,255,255,0.6)';
     ctx.lineWidth = 1.8;
     ctx.stroke();
     
     // Balloon Body
-    let grad = ctx.createRadialGradient(this.x - 10, this.y - 12, 3, this.x, this.y, this.rx);
+    let grad = ctx.createRadialGradient(drawX - 10, drawY - 12, 3, drawX, drawY, this.rx);
     grad.addColorStop(0, this.theme.shine);
     grad.addColorStop(0.8, this.theme.main);
     
     ctx.beginPath();
-    ctx.ellipse(this.x, this.y, this.rx, this.ry, 0, 0, Math.PI * 2);
+    ctx.ellipse(drawX, drawY, this.rx, this.ry, 0, 0, Math.PI * 2);
     ctx.fillStyle = grad;
     ctx.fill();
     
     // Balloon Tail
     ctx.beginPath();
-    ctx.moveTo(this.x - 4, this.y + this.ry);
-    ctx.lineTo(this.x + 4, this.y + this.ry);
-    ctx.lineTo(this.x, this.y + this.ry + 5);
+    ctx.moveTo(drawX - 4, drawY + this.ry);
+    ctx.lineTo(drawX + 4, drawY + this.ry);
+    ctx.lineTo(drawX, drawY + this.ry + 5);
     ctx.fillStyle = this.theme.main;
     ctx.fill();
     
@@ -434,15 +492,14 @@ class Balloon {
     const paddingX = 8;
     const maxTextWidth = boxW - paddingX * 2;
     
-    // Dynamic Font Scaling & Text Wrapping Engine
     let fontSize = 12;
-    ctx.font = `bold ${fontSize}px Kalpurush, sans-serif`;
+    ctx.font = `bold ${fontSize}px system-ui, -apple-system, sans-serif`;
     
     let words = this.text.split(' ');
     let lines = [];
     
     const getLines = (fSize) => {
-      ctx.font = `bold ${fSize}px Kalpurush, sans-serif`;
+      ctx.font = `bold ${fSize}px system-ui, -apple-system, sans-serif`;
       let resLines = [];
       let currentLine = '';
       
@@ -461,41 +518,29 @@ class Balloon {
 
     lines = getLines(fontSize);
     
-    // Reduce font size if text exceeds width or takes more than 2 lines
     while ((lines.length > 2 || lines.some(l => ctx.measureText(l).width > maxTextWidth)) && fontSize > 8) {
       fontSize -= 0.5;
       lines = getLines(fontSize);
-    }
-    
-    // Hard check for long single words
-    if (lines.some(l => ctx.measureText(l).width > maxTextWidth)) {
-      while (fontSize > 7 && lines.some(l => ctx.measureText(l).width > maxTextWidth)) {
-        fontSize -= 0.5;
-        ctx.font = `bold ${fontSize}px Kalpurush, sans-serif`;
-      }
     }
 
     const lineHeight = fontSize * 1.25;
     const boxH = Math.max(24, lines.length * lineHeight + 8);
     
-    // Draw Text Box Background
     ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
-    ctx.beginPath();
-    ctx.roundRect(this.x - boxW/2, this.y - boxH/2, boxW, boxH, 6);
+    drawRoundedRect(ctx, drawX - boxW/2, drawY - boxH/2, boxW, boxH, 6);
     ctx.fill();
     ctx.strokeStyle = 'rgba(15, 23, 42, 0.15)';
     ctx.lineWidth = 1;
     ctx.stroke();
     
-    // Draw Text
     ctx.fillStyle = '#0f172a';
-    ctx.font = `bold ${fontSize}px Kalpurush, sans-serif`;
+    ctx.font = `bold ${fontSize}px system-ui, -apple-system, sans-serif`;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     
-    let startY = this.y - ((lines.length - 1) * lineHeight) / 2;
+    let startY = drawY - ((lines.length - 1) * lineHeight) / 2;
     lines.forEach((line, i) => {
-      ctx.fillText(line, this.x, startY + (i * lineHeight));
+      ctx.fillText(line, drawX, startY + (i * lineHeight));
     });
     
     ctx.restore();
@@ -503,8 +548,8 @@ class Balloon {
   update() {
     if(this.popped) return;
     this.y += this.speed;
-    this.swing += 0.03;
-    this.x += Math.sin(this.swing) * 0.4;
+    this.swing += 0.02; 
+    this.x += Math.sin(this.swing) * 0.3;
     if (this.y - this.ry > gameHeight) {
       this.y = -60;
     }
@@ -552,7 +597,7 @@ function drawVectorBow(pull, angle) {
 
 function drawVectorArrow(startX, startY, angle, length = 70) {
   ctx.save();
-  ctx.translate(startX, startY);
+  ctx.translate(Math.round(startX), Math.round(startY));
   ctx.rotate(angle);
   
   ctx.strokeStyle = '#d97706';
@@ -610,9 +655,32 @@ class FlyingArrow {
 let balloons = [];
 let arrows = [];
 
+// সেভ করা অগ্রগতির ডাটা লোড করা (localStorage)
+function loadSavedProgress() {
+  const savedIndex = localStorage.getItem('archery_current_q');
+  const savedScore = localStorage.getItem('archery_score');
+
+  if (savedIndex !== null) {
+    currentQIndex = parseInt(savedIndex, 10);
+  }
+  if (savedScore !== null) {
+    score = parseInt(savedScore, 10);
+    scoreVal.innerText = score;
+  }
+}
+
 function loadQuestion() {
   isWaiting = false;
   feedbackPopup.classList.remove('active');
+
+  if (currentQIndex >= quizData.length) {
+    currentQIndex = 0;
+  }
+
+  // বর্তমান প্রশ্ন ও স্কোর ব্রাউজারে অটো সেভ
+  localStorage.setItem('archery_current_q', currentQIndex);
+  localStorage.setItem('archery_score', score);
+
   const q = quizData[currentQIndex];
   questionBox.innerText = q.question;
   qNum.innerText = currentQIndex + 1;
@@ -652,10 +720,22 @@ function handleAnswer(selectedIdx, balloon) {
     feedbackPopup.innerHTML = `${randomMsg}<br><span style="font-size:14px; font-weight:600; opacity:0.95">সঠিক উত্তর: <b>${q.options[q.answer]}</b></span>`;
   }
   setTimeout(() => {
-    currentQIndex = (currentQIndex + 1) % quizData.length;
+    currentQIndex++;
     loadQuestion();
   }, 2200);
 }
+
+// রিসেট বাটন
+resetBtn.addEventListener('click', () => {
+  if (confirm("আপনি কি নতুন করে ১ নম্বর প্রশ্ন থেকে শুরু করতে চান?")) {
+    localStorage.removeItem('archery_current_q');
+    localStorage.removeItem('archery_score');
+    currentQIndex = 0;
+    score = 0;
+    scoreVal.innerText = 0;
+    loadQuestion();
+  }
+});
 
 let isAiming = false;
 let bowCenter = { x: 0, y: 0 };
@@ -717,7 +797,7 @@ function drawArcheryBow() {
   const center = { x: gameWidth / 2, y: bowY };
   
   ctx.save();
-  ctx.translate(center.x, center.y);
+  ctx.translate(Math.round(center.x), Math.round(center.y));
   
   let angle = -Math.PI / 2;
   let pull = 0;
@@ -775,8 +855,10 @@ function render() {
   requestAnimationFrame(render);
 }
 
+// শুরুতেই অগ্রগতির ডাটা রিড করা
+loadSavedProgress();
 loadQuestion();
-render();
+requestAnimationFrame(render);
 </script>
 </body>
 </html>
