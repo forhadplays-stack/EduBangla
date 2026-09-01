@@ -914,8 +914,8 @@ arts: [
         // Global variable to keep track of the currently selected Drive Link
         let activeDriveLink = 'https://drive.google.com';
 
-       // =========================================
-// EDUCATION DATABASE - CORRECTED VERSION
+ // =========================================
+// EDUCATION DATABASE - OPTIMIZED VERSION
 // =========================================
 
 const educationDatabase = {
@@ -925,31 +925,25 @@ const educationDatabase = {
             "Arts (মানবিক)",
             "Commerce (ব্যবসায় শিক্ষা)"
         ],
-
         HSC: [
             "Science (বিজ্ঞান)",
             "Arts (মানবিক)",
             "Commerce (ব্যবসায় শিক্ষা)"
         ],
-
         Admission: [
             "A Unit (বিজ্ঞান ক)",
             "B Unit (মানবিক খ)",
-            "C Unit (ব্যবসায় শিক্ষা গ)"
+            "C Unit (ব্যবসায় শিক্ষা গ)"
         ]
     },
 
     subjects: {
-
-        // =========================
-        // SSC
-        // =========================
-
         "SSC_Science": [
+            "গণিত",
             "বাংলা ১ম পত্র",
-            "বাংলা ২য় পত্র",
+            "বাংলা ২য় পত্র",
             "ইংরেজি ১ম পত্র",
-            "ইংরেজি ২য় পত্র",
+            "ইংরেজি ২য় পত্র",
             "পদার্থবিজ্ঞান (Physics)",
             "রসায়ন (Chemistry)",
             "উচ্চতর গণিত (Higher Math)",
@@ -958,1150 +952,1143 @@ const educationDatabase = {
         ],
 
         "SSC_Arts": [
+            
             "বাংলা ১ম পত্র",
-            "বাংলা ২য় পত্র",
+            "বাংলা ২য় পত্র",
             "ইংরেজি ১ম পত্র",
-            "ইংরেজি ২য় পত্র",
-            "ইতিহাস ও বিশ্বসভ্যতা",
+            "ইংরেজি ২য় পত্র",
+            "গণিত",
+            "সাধারণ বিজ্ঞান",
+            "অর্থনীতি",
             "পৌরনীতি ও নাগরিকতা",
             "ভূগোল ও পরিবেশ",
             "তথ্য ও যোগাযোগ প্রযুক্তি (ICT)"
         ],
 
         "SSC_Commerce": [
+           
             "বাংলা ১ম পত্র",
-            "বাংলা ২য় পত্র",
+            "বাংলা ২য় পত্র",
             "ইংরেজি ১ম পত্র",
-            "ইংরেজি ২য় পত্র",
+            "ইংরেজি ২য় পত্র",
+            "গণিত",
+            "সাধারণ বিজ্ঞান",
             "হিসাববিজ্ঞান (Accounting)",
             "ফিন্যান্স ও ব্যাংকিং",
-            "ব্যবসায় উদ্যোগ",
+            "ব্যবসায় উদ্যোগ",
             "তথ্য ও যোগাযোগ প্রযুক্তি (ICT)"
         ],
 
-        // =========================
-        // HSC SCIENCE
-        // =========================
-
         "HSC_Science": [
             "বাংলা ১ম পত্র",
-            "বাংলা ২য় পত্র",
+            "বাংলা ২য় পত্র",
             "ইংরেজি ১ম পত্র",
-            "ইংরেজি ২য় পত্র",
+            "ইংরেজি ২য় পত্র",
             "তথ্য ও যোগাযোগ প্রযুক্তি (ICT)",
             "পদার্থবিজ্ঞান ১ম পত্র",
-            "পদার্থবিজ্ঞান ২য় পত্র",
+            "পদার্থবিজ্ঞান ২য় পত্র",
             "রসায়ন ১ম পত্র",
-            "রসায়ন ২য় পত্র",
+            "রসায়ন ২য় পত্র",
             "উচ্চতর গণিত ১ম পত্র",
-            "উচ্চতর গণিত ২য় পত্র",
+            "উচ্চতর গণিত ২য় পত্র",
             "জীববিজ্ঞান ১ম পত্র",
-            "জীববিজ্ঞান ২য় পত্র"
+            "জীববিজ্ঞান ২য় পত্র"
         ],
-
-        // =========================
-        // HSC ARTS
-        // =========================
 
         "HSC_Arts": [
             "বাংলা ১ম পত্র",
-            "বাংলা ২য় পত্র",
+            "বাংলা ২য় পত্র",
             "ইংরেজি ১ম পত্র",
-            "ইংরেজি ২য় পত্র",
+            "ইংরেজি ২য় পত্র",
             "তথ্য ও যোগাযোগ প্রযুক্তি (ICT)",
             "ইতিহাস ১ম পত্র",
-            "ইতিহাস ২য় পত্র",
+            "ইতিহাস ২য় পত্র",
             "পৌরনীতি ও সুশাসন ১ম পত্র",
-            "পৌরনীতি ও সুশাসন ২য় পত্র",
+            "পৌরনীতি ও সুশাসন ২য় পত্র",
             "ভূগোল ১ম পত্র",
-            "ভূগোল ২য় পত্র",
+            "ভূগোল ২য় পত্র",
             "অর্থনীতি ১ম পত্র",
-            "অর্থনীতি ২য় পত্র"
+            "অর্থনীতি ২য় পত্র"
         ],
-
-        // =========================
-        // HSC COMMERCE
-        // =========================
 
         "HSC_Commerce": [
             "বাংলা ১ম পত্র",
-            "বাংলা ২য় পত্র",
+            "বাংলা ২য় পত্র",
             "ইংরেজি ১ম পত্র",
-            "ইংরেজি ২য় পত্র",
+            "ইংরেজি ২য় পত্র",
             "তথ্য ও যোগাযোগ প্রযুক্তি (ICT)",
             "হিসাববিজ্ঞান ১ম পত্র",
-            "হিসাববিজ্ঞান ২য় পত্র",
-            "ব্যবসায় সংগঠন ও ব্যবস্থাপনা ১ম পত্র",
-            "ব্যবসায় সংগঠন ও ব্যবস্থাপনা ২য় পত্র",
+            "হিসাববিজ্ঞান ২য় পত্র",
+            "ব্যবসায় সংগঠন ও ব্যবস্থাপনা ১ম পত্র",
+            "ব্যবসায় সংগঠন ও ব্যবস্থাপনা ২য় পত্র",
             "ফিন্যান্স, ব্যাংকিং ও বিমা ১ম পত্র",
-            "ফিন্যান্স, ব্যাংকিং ও বিমা ২য় পত্র",
+            "ফিন্যান্স, ব্যাংকিং ও বিমা ২য় পত্র",
             "মার্কেটিং ১ম পত্র",
-            "মার্কেটিং ২য় পত্র"
+            "মার্কেটিং ২য় পত্র"
         ],
-
-        // =========================
-        // ADMISSION
-        // =========================
 
         "Adm_A": [
             "বিশ্ববিদ্যালয় ক-ইউনিট প্রশ্নব্যাংক",
             "ইঞ্জিনিয়ারিং ভর্তি সমাধান",
             "মেডিকেল ভর্তি সলিউশন"
         ],
-
         "Adm_B": [
             "ঢাবি খ-ইউনিট ভর্তি সমাধান",
             "জিএসটি (GST) মানবিক ভর্তি গাইড"
         ],
-
         "Adm_C": [
             "ঢাবি গ-ইউনিট ভর্তি গাইড",
             "জিএসটি ব্যবসায় শিক্ষা সমাধান"
         ]
     },
 
-    // =================================================
-    // CHAPTERS / PDF DATABASE
-    // =================================================
-
     chapters: {
-         
-        // =================================================
-        // বাংলা ১ম পত্র
-        // =================================================
+        "HSC": {
+            "বাংলা ১ম পত্র": [
+               {
+    name: "গল্প ১. বাঙ্গালার নব্য লেখকদিগের প্রতি নিবেদন — বঙ্কিমচন্দ্র চট্টোপাধ্যায়",
+    size: "৩.৮ MB",
+    file: "bangalar-nobbo-lekhok.pdf",
+    link: "https://drive.google.com/file/d/1SCke0yKMULeUXq5W-qwhsuo8K23WsE4p/view?usp=drive_link"
+},
 
-        "বাংলা ১ম পত্র": [
+{
+    name: "গল্প ২. অপরিচিতা — রবীন্দ্রনাথ ঠাকুর",
+    size: "৪.২ MB",
+    file: "oporichita.pdf",
+    link: "https://drive.google.com/file/d/1Tm87H0AMfwUvI0qALt7RmE1Mvx79muNB/view?usp=drive_link"
+},
 
-            {
-                name: "গল্প ১. বাঙ্গালার নব্য লেখকদিগের প্রতি নিবেদন — বঙ্কিমচন্দ্র চট্টোপাধ্যায়",
-                size: "৩.৮ MB",
-                file: "bangalar-nobbo-lekhok.pdf",
-                link: "https://drive.google.com/file/d/1SCke0yKMULeUXq5W-qwhsuo8K23WsE4p/view?usp=drive_link"
-            },
+{
+    name: "গল্প ৩. সাহিত্যে খেলা — প্রমথ চৌধুরী",
+    size: "৩.১ MB",
+    file: "sahitte-khela.pdf",
+    link: "https://drive.google.com/file/d/1uFbnPaJNw5UN8ufvZG4bxYCmR4-r-N81/view?usp=drive_link"
+},
 
-            {
-                name: "গল্প ২. অপরিচিতা — রবীন্দ্রনাথ ঠাকুর",
-                size: "৪.২ MB",
-                file: "oporichita.pdf",
-                link: "https://drive.google.com/file/d/1Tm87H0AMfwUvI0qALt7RmE1Mvx79muNB/view?usp=drive_link"
-            },
+{
+    name: "গল্প ৪. বিলাসী — শরৎচন্দ্র চট্টোপাধ্যায়",
+    size: "৪.৫ MB",
+    file: "bilasi.pdf",
+    link: "https://drive.google.com/file/d/1k6gehTeYq_Yfnmt_uQ3pwNevmTHjuivw/view?usp=drive_link"
+},
 
-            {
-                name: "গল্প ৩. সাহিত্যে খেলা — প্রমথ চৌধুরী",
-                size: "৩.১ MB",
-                file: "sahitte-khela.pdf",
-                link: "https://drive.google.com/file/d/1uFbnPaJNw5UN8ufvZG4bxYCmR4-r-N81/view?usp=drive_link"
-            },
+{
+    name: "গল্প ৫. অর্ধাঙ্গী — রোকেয়া সাখাওয়াত হোসেন",
+    size: "৩.৯ MB",
+    file: "ordhangi.pdf",
+    link: "https://drive.google.com/file/d/1MWRGpJTgd27x-9Z_mRxpAqACfN6hc1MQ/view?usp=drive_link"
+},
 
-            {
-                name: "গল্প ৪. বিলাসী — শরৎচন্দ্র চট্টোপাধ্যায়",
-                size: "৪.৫ MB",
-                file: "bilasi.pdf",
-                link: "https://drive.google.com/file/d/1k6gehTeYq_Yfnmt_uQ3pwNevmTHjuivw/view?usp=drive_link"
-            },
+{
+    name: "গল্প ৬. যৌবনের গান — কাজী নজরুল ইসলাম",
+    size: "৩.৫ MB",
+    file: "jouboner-gan.pdf",
+    link: "https://docs.google.com/document/d/1i0w2PDn83_SOKqyJeRKKaBcglnRHsmtdm72oXILHx30/edit?usp=drive_link"
+},
 
-            {
-                name: "গল্প ৫. অর্ধাঙ্গী — রোকেয়া সাখাওয়াত হোসেন",
-                size: "৩.৯ MB",
-                file: "ordhangi.pdf",
-                link: "https://drive.google.com/file/d/1MWRGpJTgd27x-9Z_mRxpAqACfN6hc1MQ/view?usp=drive_link"
-            },
+{
+    name: "গল্প ৭. জীবন ও বৃক্ষ — মোতাহের হোসেন চৌধুরী",
+    size: "৪.০ MB",
+    file: "jibon-o-brikkho.pdf",
+    link: "https://drive.google.com/file/d/1ureDMMe0sDNWTsUZr07knSz_eSjBu1fF/view?usp=drive_link"
+},
 
-            {
-                name: "গল্প ৬. যৌবনের গান — কাজী নজরুল ইসলাম",
-                size: "৩.৫ MB",
-                file: "jouboner-gan.pdf",
-                link: "https://docs.google.com/document/d/1i0w2PDn83_SOKqyJeRKKaBcglnRHsmtdm72oXILHx30/edit?usp=drive_link"
-            },
+{
+    name: "গল্প ৮. গন্তব্য কাবুল — সৈয়দ মুজতবা আলী",
+    size: "৪.৭ MB",
+    file: "gontobbo-kabul.pdf",
+    link: "https://drive.google.com/file/d/124v00_M8LcaUYR-8IgiqlzEx9Otxu1c4/view?usp=drive_link"
+},
 
-            {
-                name: "গল্প ৭. জীবন ও বৃক্ষ — মোতাহের হোসেন চৌধুরী",
-                size: "৪.০ MB",
-                file: "jibon-o-brikkho.pdf",
-                link: "https://drive.google.com/file/d/1ureDMMe0sDNWTsUZr07knSz_eSjBu1fF/view?usp=drive_link"
-            },
+{
+    name: "গল্প ৯. মাসি-পিসি — মানিক বন্দ্যোপাধ্যায়",
+    size: "৩.৬ MB",
+    file: "masi-pisi.pdf",
+    link: "https://drive.google.com/file/d/1u0aDlX9vFmSpsF4iZvmrvrOzzDBIwsla/view?usp=drive_link"
+},
 
-            {
-                name: "গল্প ৮. গন্তব্য কাবুল — সৈয়দ মুজতবা আলী",
-                size: "৪.৭ MB",
-                file: "gontobbo-kabul.pdf",
-                link: "https://drive.google.com/file/d/124v00_M8LcaUYR-8IgiqlzEx9Otxu1c4/view?usp=drive_link"
-            },
+{
+    name: "গল্প ১০. কপিলদাস মুর্মুর শেষ কাজ — শওকত আলী",
+    size: "৪.১ MB",
+    file: "kopildas-murmu.pdf",
+    link: "https://drive.google.com/file/d/1RHkIt3KMSyagtWUrgT3rnoRXobwxR19V/view?usp=drive_link"
+},
 
-            {
-                name: "গল্প ৯. মাসি-পিসি — মানিক বন্দ্যোপাধ্যায়",
-                size: "৩.৬ MB",
-                file: "masi-pisi.pdf",
-                link: "https://drive.google.com/file/d/1u0aDlX9vFmSpsF4iZvmrvrOzzDBIwsla/view?usp=drive_link"
-            },
+{
+    name: "গল্প ১১. রেইনকোট — আখতারুজ্জামান ইলিয়াস",
+    size: "৫.২ MB",
+    file: "raincoat.pdf",
+    link: "https://drive.google.com/file/d/15wnchOqBCZcjMver2L0Qi5s-VUMokMEZ/view?usp=drive_link"
+},
 
-            {
-                name: "গল্প ১০. কপিলদাস মুর্মুর শেষ কাজ — শওকত আলী",
-                size: "৪.১ MB",
-                file: "kopildas-murmu.pdf",
-                link: "https://drive.google.com/file/d/1RHkIt3KMSyagtWUrgT3rnoRXobwxR19V/view?usp=drive_link"
-            },
+{
+    name: "গল্প ১২. নেকলেস — গী দ্য মোপাসাঁ",
+    size: "৩.৪ MB",
+    file: "necklace.pdf",
+    link: "https://drive.google.com/file/d/1nngWrOYH2zI1IkeuSKnRLmvfZTvi4dN9/view?usp=drive_link"
+},
 
-            {
-                name: "গল্প ১১. রেইনকোট — আখতারুজ্জামান ইলিয়াস",
-                size: "৫.২ MB",
-                file: "raincoat.pdf",
-                link: "https://drive.google.com/file/d/15wnchOqBCZcjMver2L0Qi5s-VUMokMEZ/view?usp=drive_link"
-            },
+{
+    name: "কবিতা ১. ঋতু-বর্ণন — আলাওল",
+    size: "৩.২ MB",
+    file: "ritu-bornon.pdf",
+    link: "https://drive.google.com/file/d/1-Egu3TF4Ezxzh_AeX7vYdjRmKgM2fhFR/view?usp=drive_link"
+},
 
-            {
-                name: "গল্প ১২. নেকলেস — গী দ্য মোপাসাঁ",
-                size: "৩.৪ MB",
-                file: "necklace.pdf",
-                link: "https://drive.google.com/file/d/1nngWrOYH2zI1IkeuSKnRLmvfZTvi4dN9/view?usp=drive_link"
-            },
+{
+    name: "কবিতা ২. বিভীষণের প্রতি মেঘনাদ — মাইকেল মধুসূদন দত্ত",
+    size: "৫.৫ MB",
+    file: "bibhishon-meghnad.pdf",
+    link: "https://drive.google.com/file/d/1oJ9ij93gYdWhKcSybZjckbKmUMaNQeA0/view?usp=drive_link"
+},
 
-            {
-                name: "কবিতা ১. ঋতু-বর্ণন — আলাওল",
-                size: "৩.২ MB",
-                file: "ritu-bornon.pdf",
-                link: "https://drive.google.com/file/d/1-Egu3TF4Ezxzh_AeX7vYdjRmKgM2fhFR/view?usp=drive_link"
-            },
+{
+    name: "কবিতা ৩. সোনার তরী — রবীন্দ্রনাথ ঠাকুর",
+    size: "৩.৯ MB",
+    file: "sonar-tori.pdf",
+    link: "https://drive.google.com/file/d/1xDsauO9IHwYiVR2ZoSB2Z2tjQQVNvFgi/view?usp=drive_link"
+},
 
-            {
-                name: "কবিতা ২. বিভীষণের প্রতি মেঘনাদ — মাইকেল মধুসূদন দত্ত",
-                size: "৫.৫ MB",
-                file: "bibhishon-meghnad.pdf",
-                link: "https://drive.google.com/file/d/1oJ9ij93gYdWhKcSybZjckbKmUMaNQeA0/view?usp=drive_link"
-            },
+{
+    name: "কবিতা ৪. বিদ্রোহী — কাজী নজরুল ইসলাম",
+    size: "৪.৮ MB",
+    file: "bidrohi.pdf",
+    link: "https://drive.google.com/file/d/169yUFbmYJRIPB2rfqTb_k6C9yjZJ8dUl/view?usp=drive_link"
+},
 
-            {
-                name: "কবিতা ৩. সোনার তরী — রবীন্দ্রনাথ ঠাকুর",
-                size: "৩.৯ MB",
-                file: "sonar-tori.pdf",
-                link: "https://drive.google.com/file/d/1xDsauO9IHwYiVR2ZoSB2Z2tjQQVNvFgi/view?usp=drive_link"
-            },
+{
+    name: "কবিতা ৫. সুচেতনা — জীবনানন্দ দাশ",
+    size: "৩.০ MB",
+    file: "suchetona.pdf",
+    link: "https://drive.google.com/file/d/1CQC3I2kp6ZmkxLCb6t891VWoiX45CoFp/view?usp=drive_link"
+},
 
-            {
-                name: "কবিতা ৪. বিদ্রোহী — কাজী নজরুল ইসলাম",
-                size: "৪.৮ MB",
-                file: "bidrohi.pdf",
-                link: "https://drive.google.com/file/d/169yUFbmYJRIPB2rfqTb_k6C9yjZJ8dUl/view?usp=drive_link"
-            },
+{
+    name: "কবিতা ৬. প্রতিদান — জসীমউদ্দীন",
+    size: "২.৯ MB",
+    file: "protidan.pdf",
+    link: "https://drive.google.com/file/d/1rRPTXvHYm-Sf_vZmlBEXKDqh638PuM8U/view?usp=drive_link"
+},
 
-            {
-                name: "কবিতা ৫. সুচেতনা — জীবনানন্দ দাশ",
-                size: "৩.০ MB",
-                file: "suchetona.pdf",
-                link: "https://drive.google.com/file/d/1CQC3I2kp6ZmkxLCb6t891VWoiX45CoFp/view?usp=drive_link"
-            },
+{
+    name: "কবিতা ৭. তাহারেই পড়ে মনে — সুফিয়া কামাল",
+    size: "৩.৩ MB",
+    file: "taharei-pore-mone.pdf",
+    link: "https://drive.google.com/file/d/1Py9K5QaIWIp2NQ1w8IO9M7yzxyrOkrQ8/view?usp=drive_link"
+},
 
-            {
-                name: "কবিতা ৬. প্রতিদান — জসীমউদ্দীন",
-                size: "২.৯ MB",
-                file: "protidan.pdf",
-                link: "https://drive.google.com/file/d/1rRPTXvHYm-Sf_vZmlBEXKDqh638PuM8U/view?usp=drive_link"
-            },
+{
+    name: "কবিতা ৮. পদ্মা — ফরুখ আহমদ",
+    size: "৩.৭ MB",
+    file: "podma.pdf",
+    link: "https://drive.google.com/file/d/1gzkyrvTzsKtFr-vOLB4CIhA0RgvPN-PG/view?usp=drive_link"
+},
 
-            {
-                name: "কবিতা ৭. তাহারেই পড়ে মনে — সুফিয়া কামাল",
-                size: "৩.৩ MB",
-                file: "taharei-pore-mone.pdf",
-                link: "https://drive.google.com/file/d/1Py9K5QaIWIp2NQ1w8IO9M7yzxyrOkrQ8/view?usp=drive_link"
-            },
+{
+    name: "কবিতা ৯. ফেব্রুয়ারি ১৯৬৯ — শামসুর রাহমান",
+    size: "৪.২ MB",
+    file: "february-1969.pdf",
+    link: "https://drive.google.com/file/d/1ltIJEl7M1V1MxxcXWN8HQRJ2vhkIsHxS/view?usp=drive_link"
+},
 
-            {
-                name: "কবিতা ৮. পদ্মা — ফরুখ আহমদ",
-                size: "৩.৭ MB",
-                file: "podma.pdf",
-                link: "https://drive.google.com/file/d/1gzkyrvTzsKtFr-vOLB4CIhA0RgvPN-PG/view?usp=drive_link"
-            },
+{
+    name: "কবিতা ১০. আঠার বছর বয়স — সুকান্ত ভট্টাচার্য",
+    size: "৩.৫ MB",
+    file: "atharo-bochor-boyos.pdf",
+    link: "https://drive.google.com/file/d/1I6chyHhemWEFDCfcb4scpZCrWcpzHL7O/view?usp=drive_link"
+},
 
-            {
-                name: "কবিতা ৯. ফেব্রুয়ারি ১৯৬৯ — শামসুর রাহমান",
-                size: "৪.২ MB",
-                file: "february-1969.pdf",
-                link: "https://drive.google.com/file/d/1ltIJEl7M1V1MxxcXWN8HQRJ2vhkIsHxS/view?usp=drive_link"
-            },
+{
+    name: "কবিতা ১১. আমি কিংবদন্তির কথা বলছি — আবু জাফর ওবায়দুল্লাহ্",
+    size: "৪.০ MB",
+    file: "ami-kingbodonti.pdf",
+    link: "https://drive.google.com/file/d/1u4SPTplokLTHjaVeQIAwAHFHObVfS9SB/view?usp=drive_link"
+},
 
-            {
-                name: "কবিতা ১০. আঠার বছর বয়স — সুকান্ত ভট্টাচার্য",
-                size: "৩.৫ MB",
-                file: "atharo-bochor-boyos.pdf",
-                link: "https://drive.google.com/file/d/1I6chyHhemWEFDCfcb4scpZCrWcpzHL7O/view?usp=drive_link"
-            },
+{
+    name: "কবিতা ১২. প্রত্যাবর্তনের লজ্জা — আল মাহমুদ",
+    size: "৩.৬ MB",
+    file: "prottaborton-lozza.pdf",
+    link: "https://drive.google.com/file/d/1gzyE2-KjGzKA-04PBvaOK4IXNrICyrr5/view?usp=drive_link"
+},
 
-            {
-                name: "কবিতা ১১. আমি কিংবদন্তির কথা বলছি — আবু জাফর ওবায়দুল্লাহ্",
-                size: "৪.০ MB",
-                file: "ami-kingbodonti.pdf",
-                link: "https://drive.google.com/file/d/1u4SPTplokLTHjaVeQIAwAHFHObVfS9SB/view?usp=drive_link"
-            },
+{
+    name: "নাটক ১. নবাব সিরাজউদ্দৌলা — সিকান্দার আবু জাফর",
+    size: "৬.২ MB",
+    file: "nawab-sirajuddoula.pdf",
+    link: "https://drive.google.com/file/d/1AOsM0cShaa4S6tP03FSvNhhZwo4zosyJ/view?usp=drive_link"
+},
 
-            {
-                name: "কবিতা ১২. প্রত্যাবর্তনের লজ্জা — আল মাহমুদ",
-                size: "৩.৬ MB",
-                file: "prottaborton-lozza.pdf",
-                link: "https://drive.google.com/file/d/1gzyE2-KjGzKA-04PBvaOK4IXNrICyrr5/view?usp=drive_link"
-            },
+{
+    name: "উপন্যাস ১. লালসালু — সৈয়দ ওয়ালীউল্লাহ",
+    size: "৭.১ MB",
+    file: "lalsalu.pdf",
+    link: "https://drive.google.com/file/d/1w2Ws8Eq5qkKF8_o02mSuvF3fJvnjseV7/view?usp=drive_link"
+}
+                        ],
+          "বাংলা ২য় পত্র": [
 
-            {
-                name: "নাটক ১. নবাব সিরাজউদ্দৌলা — সিকান্দার আবু জাফর",
-                size: "৬.২ MB",
-                file: "nawab-sirajuddoula.pdf",
-                link: "https://drive.google.com/file/d/1AOsM0cShaa4S6tP03FSvNhhZwo4zosyJ/view?usp=drive_link"
-            },
+    {
+        name: "বাংলা উচ্চারণের নিয়ম",
+        size: "৫.৪ MB",
+        file: "bangla-uccharon.pdf",
+        link: "#"
+    },
 
-            {
-                name: "উপন্যাস ১. লালসালু — সৈয়দ ওয়ালীউল্লাহ",
-                size: "৭.১ MB",
-                file: "lalsalu.pdf",
-                link: "https://drive.google.com/file/d/1w2Ws8Eq5qkKF8_o02mSuvF3fJvnjseV7/view?usp=drive_link"
-            },
- 
-        ],
+    {
+        name: "বাংলা বানানের নিয়ম",
+        size: "৫.৪ MB",
+        file: "bangla-banan.pdf",
+        link: "https://drive.google.com/file/d/1zjY1iAWU7HR_lQf7r0ieBb9RldmDo6qa/view?usp=drive_link"
+    },
 
-           // ================================================= 
-           // বাংলা ২য় পত্র 
-           // ================================================= 
- 
-"বাংলা ২য় পত্র": [ 
- 
-    { 
-        name: "বাংলা উচ্চারণের নিয়ম", 
-        size: "৫.৪ MB", 
-        file: "বাংলা উচ্চারণের নিয়ম.pdf", 
-        link: "আপনার বাংলা উচ্চারণের নিয়ম Google Drive লিংক" 
-    }, 
- 
-    { 
-        name: "বাংলা বানানের নিয়ম", 
-        size: "৫.৪ MB", 
-        file: "বাংলা বানানের নিয়ম.pdf", 
-        link: "https://drive.google.com/file/d/1zjY1iAWU7HR_lQf7r0ieBb9RldmDo6qa/view?usp=drive_link" 
-    }, 
- 
-    { 
-        name: "বাংলা ভাষার ব্যাকরণিক শব্দশ্রেণী", 
-        size: "৫.৪ MB", 
-        file: "বাংলা ভাষার ব্যাকরণিক শব্দশ্রেণী.pdf", 
-        link: "https://drive.google.com/file/d/16jzI5u_gsglSSV9oe_qsWHu2tJb5WXZO/view?usp=drive_link" 
-    }, 
- 
-    { 
-        name: "বাংলা শব্দগঠন (উপসর্গ, প্রত্যয় ও সমাস)", 
-        size: "৫.৪ MB", 
-        file: "বাংলা শব্দগঠন (উপসর্গ, প্রত্যয় ও সমাস).pdf", 
-        link: "https://drive.google.com/file/d/1oWp5ggpy-VBB8ZGZ0NRWztQ1VNmbMUb0/view?usp=drive_link" 
-    }, 
- 
-    { 
-        name: "বাক্যতত্ত্ব", 
-        size: "৫.৪ MB", 
-        file: "বাক্যতত্ত্ব.pdf", 
-        link: "https://drive.google.com/file/d/10G_SAs9cvtY-0Cifg4R7Atqi_85YofYP/view?usp=drive_link" 
-    }, 
- 
-    { 
-        name: "বাংলা ভাষার অপপ্রয়োগ ও শুদ্ধ প্রয়োগ", 
-        size: "৫.৪ MB", 
-        file: "বাংলা ভাষার অপপ্রয়োগ ও শুদ্ধ প্রয়োগ.pdf", 
-        link: "https://drive.google.com/file/d/1jTUf_9ZXcm_lZ_M7aIijxf-srhOClBRY/view?usp=drive_link" 
-    }, 
-   
-    { 
-        name: "পারিভাষিক শব্দ", 
-        size: "৫.৪ MB", 
-        file: "পারিভাষিক শব্দ.pdf", 
-        link: "https://drive.google.com/file/d/1wNj6yjhLlwXOXlxRPIacGwgoPsv9KsO1/view?usp=drive_link" 
-    } ,
+    {
+        name: "বাংলা ভাষার ব্যাকরণিক শব্দশ্রেণী",
+        size: "৫.৪ MB",
+        file: "shobdosreni.pdf",
+        link: "https://drive.google.com/file/d/16jzI5u_gsglSSV9oe_qsWHu2tJb5WXZO/view?usp=drive_link"
+    },
 
-       { 
-        name: "নির্মিতি", 
-        size: "৫.৪ MB", 
-        file: "নির্মিতি.pdf", 
-        link: "https://drive.google.com/file/d/12aoB26x_g_fPPAdUZiqvb1bISUqfQa1R/view?usp=drive_link" 
-    } ,
+    {
+        name: "বাংলা শব্দগঠন (উপসর্গ, প্রত্যয় ও সমাস)",
+        size: "৫.৪ MB",
+        file: "shobdogothon.pdf",
+        link: "https://drive.google.com/file/d/1oWp5ggpy-VBB8ZGZ0NRWztQ1VNmbMUb0/view?usp=drive_link"
+    },
+
+    {
+        name: "বাক্যতত্ত্ব",
+        size: "৫.৪ MB",
+        file: "bakjototto.pdf",
+        link: "https://drive.google.com/file/d/10G_SAs9cvtY-0Cifg4R7Atqi_85YofYP/view?usp=drive_link"
+    },
+
+    {
+        name: "বাংলা ভাষার অপপ্রয়োগ ও শুদ্ধ প্রয়োগ",
+        size: "৫.৪ MB",
+        file: "opproyog-suddhoproyog.pdf",
+        link: "https://drive.google.com/file/d/1jTUf_9ZXcm_lZ_M7aIijxf-srhOClBRY/view?usp=drive_link"
+    },
+
+    {
+        name: "পারিভাষিক শব্দ",
+        size: "৫.৪ MB",
+        file: "paribhashik-shobdo.pdf",
+        link: "https://drive.google.com/file/d/1wNj6yjhLlwXOXlxRPIacGwgoPsv9KsO1/view?usp=drive_link"
+    },
+
+    {
+        name: "নির্মিতি",
+        size: "৫.৪ MB",
+        file: "nirmiti.pdf",
+        link: "https://drive.google.com/file/d/12aoB26x_g_fPPAdUZiqvb1bISUqfQa1R/view?usp=drive_link"
+    }
+
 ],
 
-
-        // =================================================
-        // ICT
-        // =================================================
-
-        "তথ্য ও যোগাযোগ প্রযুক্তি (ICT)": [  
-
-            {
-                name: "তথ্য ও যোগাযোগ প্রযুক্তি (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "ict-chapter-6.pdf",
-                link: "https://drive.google.com/file/d/1A9i4DxmgUasDMMdvY1z_oCiJjwMs3u23/view?usp=drive_link"
-            }
-        ],
-
-
-
-        // =================================================
-        // ENGLISH 1ST PAPER
-        // =================================================
-          "ইংরেজি ১ম পত্র": [
-
-            {
-                name: "ইংরেজি ১ম পত্র (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "ইংরেজি ১ম পত্র.pdf",
-                link: "https://drive.google.com/file/d/11mfhygrNEL9HhtFIHlPMVmS2PmwGw4U_/view?usp=drive_link"
-            },
-        ],
-
-
-
-        // =================================================
-        // ENGLISH 2ND PAPER
-        // =================================================
-
-        "ইংরেজি ২য় পত্র": [
-
-            {
-                name: "Right forms of verb (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "Right forms of verb.pdf",
-                link: "https://drive.google.com/file/d/1Mq15x6srkR-AU5haOJ5QeqDsBxC8o2La/view?usp=drive_link"
-            },
-
-            {
-                name: "Changing Sentences (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "Changing Sentences.pdf",
-                link: "https://drive.google.com/file/d/1HKCQAdwivFyOt3UzK-r80G_T6NAgDXE0/view?usp=drive_link"
-            },
-
-            {
-                name: "Narration (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "Narration.pdf",
-                link: "https://drive.google.com/file/d/1cgNzxmWbGtpo14sibmG9J90fNV31LBik/view?usp=drive_link"
-            },
-
-            {
-                name: "Pronoun Referencing (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "Pronoun_Referencing.pdf",
-                link: "https://drive.google.com/file/d/1jrsv7adblB5F8gPuzXiRJlCMqOPxxsN5/view?usp=drive_link"
-            },
-
-            {
-                name: "Synonym Antonym (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "Synonym Antonym.pdf",
-                link: "https://drive.google.com/file/d/1ViLaFvNsiWLjh693ttUVx8x_Fnqjt-fk/view?usp=drive_link"
-            },
-
-            {
-                name: "Modifiers (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "Modifiers.pdf",
-                link: "https://drive.google.com/file/d/1z7aWyjWvNTy4-c5KihmBhaNqso7G7jB8/view?usp=drive_link"
-            },
-
-            {
-                name: "Connectors (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "Connectors.pdf",
-                link: "https://drive.google.com/file/d/15jgGb91uhb_6MGrxceI5RsnCACI_NlaF/view?usp=drive_link"
-            }
-        ],
-
-        // =================================================
-        // হিসাববিজ্ঞান ১ম পত্র
-        // =================================================
-
-        "হিসাববিজ্ঞান ১ম পত্র": [
-
-            {
-                name: "হিসাববিজ্ঞান ১ম পত্র CQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "হিসাববিজ্ঞান ১ম পত্র CQ.pdf",
-                link: "https://drive.google.com/file/d/1QsS07bnK1Q5RuQ_IUSlanWdn8NqqjhpX/view?usp=drive_link"
-            },
-
-            {
-                name: "হিসাববিজ্ঞান ১ম পত্র MCQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "হিসাববিজ্ঞান ১ম পত্র MCQ.pdf",
-                link: "https://drive.google.com/file/d/1obXENq6s44ZsGyKJKBUxggTNiEcYGUlH/view?usp=drive_link"
-            }
-        ],
-
-        // =================================================
-        // হিসাববিজ্ঞান ২য় পত্র
-        // =================================================
-
-        "হিসাববিজ্ঞান ২য় পত্র": [
-
-            {
-                name: "হিসাববিজ্ঞান ২য় পত্র CQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "হিসাববিজ্ঞান ২য় পত্র CQ.pdf",
-                link: "https://drive.google.com/file/d/1TQmYJZv6qEo6Ss8mLRIN-jgYQIQ3Bxr-/view?usp=drive_link"
-            },
-
-            {
-                name: "হিসাববিজ্ঞান ২য় পত্র MCQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "হিসাববিজ্ঞান ২য় পত্র MCQ.pdf",
-                link: "https://drive.google.com/file/d/1jXPHP5AOVzQRjqaIFCul0PgQvqJtacGL/view?usp=drive_link"
-            }
-        ],
-
-        // =================================================
-        // মার্কেটিং ১ম পত্র
-        // =================================================
-
-        "মার্কেটিং ১ম পত্র": [
-
-            {
-                name: "মার্কেটিং ১ম পত্র CQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "মার্কেটিং ১ম পত্র CQ.pdf",
-                link: "https://drive.google.com/file/d/1Osp-RWEPspRfd6drnVLhH3Y0BLBdHj4f/view?usp=drive_link"
-            },
-
-            {
-                name: "মার্কেটিং ১ম পত্র MCQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "মার্কেটিং ১ম পত্র MCQ.pdf",
-                link: "https://drive.google.com/file/d/1SM7Mcovu0w3mCB1SmstEu3mSUrlc_LlW/view?usp=drive_link"
-            }
-        ],
-
-        // =================================================
-        // মার্কেটিং ২য় পত্র
-        // =================================================
-
-        "মার্কেটিং ২য় পত্র": [
-
-            {
-                name: "মার্কেটিং ২য় পত্র CQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "মার্কেটিং ২য় পত্র CQ.pdf",
-                link: "https://drive.google.com/file/d/1HuVEGfzfUi898XNebg9mPI-0PWomEw4R/view?usp=drive_link"
-            },
-
-            {
-                name: "মার্কেটিং ২য় পত্র MCQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "মার্কেটিং ২য় পত্র MCQ.pdf",
-                link: "https://drive.google.com/file/d/1nDI5gLvkzTRUgo9yUcdoo4q3PKGBb2QO/view?usp=drive_link"
-            }
-        ],
-
-        // =================================================
-        // ব্যবসায় সংগঠন ১ম পত্র
-        // =================================================
-
-        "ব্যবসায় সংগঠন ও ব্যবস্থাপনা ১ম পত্র": [
-
-            {
-                name: "ব্যবসায় সংগঠন ও ব্যবস্থাপনা ১ম পত্র CQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "ব্যবসায় সংগঠন ও ব্যবস্থাপনা ১ম পত্র CQ.pdf",
-                link: "https://drive.google.com/file/d/1G5Gj83dH51m87UqX3OJTLPvaTjF3U9UL/view?usp=drive_link"
-            },
-
-            {
-                name: "ব্যবসায় সংগঠন ও ব্যবস্থাপনা ১ম পত্র MCQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "ব্যবসায় সংগঠন ও ব্যবস্থাপনা ১ম পত্র MCQ.pdf",
-                link: "https://drive.google.com/file/d/18nDEoZef-phebUmjhvfxdJFW5uBmovQU/view?usp=drive_link"
-            }
-        ],
-
-        // =================================================
-        // ব্যবসায় সংগঠন ২য় পত্র
-        // =================================================
-
-        "ব্যবসায় সংগঠন ও ব্যবস্থাপনা ২য় পত্র": [
-
-            {
-                name: "ব্যবসায় সংগঠন ও ব্যবস্থাপনা ২য় পত্র CQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "ব্যবসায় সংগঠন ও ব্যবস্থাপনা ২য় পত্র CQ.pdf",
-                link: "https://drive.google.com/file/d/1Txl9fV6x4MiyE6nO6j5QwX4Bv3fyxuE-/view?usp=drive_link"
-            },
-
-            {
-                name: "ব্যবসায় সংগঠন ও ব্যবস্থাপনা ২য় পত্র MCQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "ব্যবসায় সংগঠন ও ব্যবস্থাপনা ২য় পত্র MCQ.pdf",
-                link: "https://drive.google.com/file/d/1fd-NZLUl7sJZJK7_3PDdGi4bfUO2xVx4/view?usp=drive_link"
-            }
-        ],
-
-        // =================================================
-        // ফিন্যান্স ১ম পত্র
-        // =================================================
-
-        "ফিন্যান্স, ব্যাংকিং ও বিমা ১ম পত্র": [
-
-            {
-                name: "ফিন্যান্স, ব্যাংকিং ও বিমা ১ম পত্র CQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "ফিন্যান্স, ব্যাংকিং ও বিমা ১ম পত্র CQ.pdf",
-                link: "https://drive.google.com/drive/folders/1Ui9hPA7279IDLd5DY9xRV0duCqCinRud?usp=drive_link"
-            },
-
-            {
-                name: "ফিন্যান্স, ব্যাংকিং ও বিমা ১ম পত্র MCQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "ফিন্যান্স, ব্যাংকিং ও বিমা ১ম পত্র MCQ.pdf",
-                link: "https://drive.google.com/drive/folders/1WWBSKxCJpXsWBYjCtIuwPxBYsiGZ3gdz?usp=drive_link"
-            }
-        ],
-
-        // =================================================
-        // ফিন্যান্স ২য় পত্র
-        // =================================================
-
-        "ফিন্যান্স, ব্যাংকিং ও বিমা ২য় পত্র": [
-
-            {
-                name: "ফিন্যান্স, ব্যাংকিং ও বিমা ২য় পত্র CQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "ফিন্যান্স, ব্যাংকিং ও বিমা ২য় পত্র CQ.pdf",
-                link: "https://drive.google.com/file/d/11Slo9-BWOJeaIxwzo8oY7k6s9mGCaj3J/view?usp=drive_link"
-            },
-
-            {
-                name: "ফিন্যান্স, ব্যাংকিং ও বিমা ২য় পত্র MCQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "ফিন্যান্স, ব্যাংকিং ও বিমা ২য় পত্র MCQ.pdf",
-                link: "https://drive.google.com/file/d/12Nb2mLfCD5NX6NFnYOO77fwrsg5iJVWn/view?usp=drive_link"
-            }
-        ],
-
-        // =================================================
-        // পদার্থবিজ্ঞান ১ম পত্র
-        // =================================================
-
-        "পদার্থবিজ্ঞান ১ম পত্র": [
-
-            {
-                name: "পদার্থবিজ্ঞান ১ম পত্র CQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "পদার্থবিজ্ঞান ১ম পত্র CQ.pdf",
-                link: "https://drive.google.com/file/d/1LvqaPsn8dOkDdtshVgRk6eEMpzxJ_dzE/view?usp=drive_link"
-            },
-
-            {
-                name: "পদার্থবিজ্ঞান ১ম পত্র MCQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "পদার্থবিজ্ঞান ১ম পত্র MCQ.pdf",
-                link: "https://drive.google.com/file/d/1NiqYRXpk5eZaJjErdNdaWGWPzxUZtfig/view?usp=drive_link"
-            }
-        ],
-
-        // =================================================
-        // পদার্থবিজ্ঞান ২য় পত্র
-        // =================================================
-
-        "পদার্থবিজ্ঞান ২য় পত্র": [
-
-            {
-                name: "পদার্থবিজ্ঞান ২য় পত্র CQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "পদার্থবিজ্ঞান ২য় পত্র CQ.pdf",
-                link: "https://drive.google.com/file/d/1CNZbuEV7wxUHUmomcIoniNnMzHiM_f6B/view?usp=drive_link"
-            },
-
-            {
-                name: "পদার্থবিজ্ঞান ২য় পত্র MCQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "পদার্থবিজ্ঞান ২য় পত্র MCQ.pdf",
-                link: "https://drive.google.com/file/d/1DoZCIxJDkFAe8h99iX8Ac4q4dXMFIdDt/view?usp=drive_link"
-            }
-        ],
-
-        // =================================================
-        // রসায়ন ১ম পত্র
-        // =================================================
-
-        "রসায়ন ১ম পত্র": [
-
-            {
-                name: "রসায়ন ১ম পত্র CQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "রসায়ন ১ম পত্র CQ.pdf",
-                link: "https://drive.google.com/file/d/1_bAyKjnPgg57sXi9IxREWGW3Vm0JFpAy/view?usp=drive_link"
-            },
-
-            {
-                name: "রসায়ন ১ম পত্র MCQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "রসায়ন ১ম পত্র MCQ.pdf",
-                link: "https://drive.google.com/file/d/1IdfaVClsguENiS4HwkwKmS3Kf4mg2DyO/view?usp=drive_link"
-            }
-        ],
-
-        // =================================================
-        // রসায়ন ২য় পত্র
-        // =================================================
-
-        "রসায়ন ২য় পত্র": [
-
-            {
-                name: "রসায়ন ২য় পত্র CQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "রসায়ন ২য় পত্র CQ.pdf",
-                link: "https://drive.google.com/file/d/1azfGMfWFSnpVaZzQDxAHRHqfoDrAu4MG/view?usp=drive_link"
-            },
-
-            {
-                name: "রসায়ন ২য় পত্র MCQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "রসায়ন ২য় পত্র MCQ.pdf",
-                link: "https://drive.google.com/file/d/13UfU6Xcl4vzE8YsmOf2UXYjB5kIw4zQt/view?usp=drive_link"
-            }
-        ],
-
-        // =================================================
-        // উচ্চতর গণিত ১ম পত্র
-        // =================================================
-
-        "উচ্চতর গণিত ১ম পত্র": [
-
-            {
-                name: "উচ্চতর গণিত ১ম পত্র CQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "উচ্চতর গণিত ১ম পত্র CQ.pdf",
-                link: "https://drive.google.com/file/d/1B9WNBzZZBel8xT4MvmrTSwzhZ5Mks52U/view?usp=drive_link"
-            },
-
-            {
-                name: "উচ্চতর গণিত ১ম পত্র MCQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "উচ্চতর গণিত ১ম পত্র MCQ.pdf",
-                link: "https://drive.google.com/file/d/1rIf1p8XTwIwH0DoJLgi50o6mI4R3FOg8/view?usp=drive_link"
-            }
-        ],
-
-        // =================================================
-        // উচ্চতর গণিত ২য় পত্র
-        // =================================================
-
-        "উচ্চতর গণিত ২য় পত্র": [
-
-            {
-                name: "উচ্চতর গণিত ২য় পত্র CQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "উচ্চতর গণিত ২য় পত্র CQ.pdf",
-                link: "https://drive.google.com/file/d/1YPgAX4REhsoFH0NxAxMw7BFWeQS07ArN/view?usp=drive_link"
-            },
-
-            {
-                name: "উচ্চতর গণিত ২য় পত্র MCQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "উচ্চতর গণিত ২য় পত্র MCQ.pdf",
-                link: "https://drive.google.com/file/d/14b5nxJ82yijLTPJVHcZdUeSsG0zB1_KM/view?usp=drive_link"
-            }
-        ],
-
-        // =================================================
-        // জীববিজ্ঞান ১ম পত্র
-        // =================================================
-
-        "জীববিজ্ঞান ১ম পত্র": [
-
-            {
-                name: "জীববিজ্ঞান ১ম পত্র CQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "জীববিজ্ঞান ১ম পত্র CQ.pdf",
-                link: "https://drive.google.com/file/d/1ztDy1ZvxvzzP48IjrCukPIacfMzpHw9h/view?usp=drive_link"
-            },
-
-            {
-                name: "জীববিজ্ঞান ১ম পত্র MCQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "জীববিজ্ঞান ১ম পত্র MCQ.pdf",
-                link: "https://drive.google.com/file/d/1mEzZsPMThdGpc7jEliL4qvkaH0Ffosej/view?usp=drive_link"
-            }
-        ],
-
-        // =================================================
-        // জীববিজ্ঞান ২য় পত্র
-        // =================================================
-
-        "জীববিজ্ঞান ২য় পত্র": [
-
-            {
-                name: "জীববিজ্ঞান ২য় পত্র CQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "জীববিজ্ঞান ২য় পত্র CQ.pdf",
-                link: "https://drive.google.com/file/d/117AYb6mDHgboQJWltwxXt4GsUOJVV84T/view?usp=drive_link"
-            },
-
-            {
-                name: "জীববিজ্ঞান ২য় পত্র MCQ (সমাধান শীট)",
-                size: "৫.৪ MB",
-                file: "জীববিজ্ঞান ২য় পত্র MCQ.pdf",
-                link: "https://drive.google.com/file/d/1M_5w_8iicPrU5dlnVFJUv0XZ2Y3G5td_/view?usp=drive_link"
-            }
-        ],
-
-    
-
-
-
-
- // =================================================
-// ইতিহাস ১ম পত্র
-// =================================================
+"তথ্য ও যোগাযোগ প্রযুক্তি (ICT)": [
+
+    {
+        name: "তথ্য ও যোগাযোগ প্রযুক্তি (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "ict-chapter-6.pdf",
+        link: "https://drive.google.com/file/d/1A9i4DxmgUasDMMdvY1z_oCiJjwMs3u23/view?usp=drive_link"
+    }
+
+],
+
+"ইংরেজি ১ম পত্র": [
+
+    {
+        name: "ইংরেজি ১ম পত্র (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "english-1st.pdf",
+        link: "https://drive.google.com/file/d/11mfhygrNEL9HhtFIHlPMVmS2PmwGw4U_/view?usp=drive_link"
+    }
+
+],
+
+"ইংরেজি ২য় পত্র": [
+
+    {
+        name: "Right forms of verb (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "Right forms of verb.pdf",
+        link: "https://drive.google.com/file/d/1Mq15x6srkR-AU5haOJ5QeqDsBxC8o2La/view?usp=drive_link"
+    },
+
+    {
+        name: "Changing Sentences (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "Changing Sentences.pdf",
+        link: "https://drive.google.com/file/d/1HKCQAdwivFyOt3UzK-r80G_T6NAgDXE0/view?usp=drive_link"
+    },
+
+    {
+        name: "Narration (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "Narration.pdf",
+        link: "https://drive.google.com/file/d/1cgNzxmWbGtpo14sibmG9J90fNV31LBik/view?usp=drive_link"
+    },
+
+    {
+        name: "Pronoun Referencing (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "Pronoun_Referencing.pdf",
+        link: "https://drive.google.com/file/d/1jrsv7adblB5F8gPuzXiRJlCMqOPxxsN5/view?usp=drive_link"
+    },
+
+    {
+        name: "Synonym Antonym (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "Synonym Antonym.pdf",
+        link: "https://drive.google.com/file/d/1ViLaFvNsiWLjh693ttUVx8x_Fnqjt-fk/view?usp=drive_link"
+    },
+
+    {
+        name: "Modifiers (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "Modifiers.pdf",
+        link: "https://drive.google.com/file/d/1z7aWyjWvNTy4-c5KihmBhaNqso7G7jB8/view?usp=drive_link"
+    },
+
+    {
+        name: "Connectors (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "Connectors.pdf",
+        link: "https://drive.google.com/file/d/15jgGb91uhb_6MGrxceI5RsnCACI_NlaF/view?usp=drive_link"
+    }
+
+],
+
+"হিসাববিজ্ঞান ১ম পত্র": [
+
+    {
+        name: "হিসাববিজ্ঞান ১ম পত্র CQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "accounting-1st-cq.pdf",
+        link: "https://drive.google.com/file/d/1QsS07bnK1Q5RuQ_IUSlanWdn8NqqjhpX/view?usp=drive_link"
+    },
+
+    {
+        name: "হিসাববিজ্ঞান ১ম পত্র MCQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "accounting-1st-mcq.pdf",
+        link: "https://drive.google.com/file/d/1obXENq6s44ZsGyKJKBUxggTNiEcYGUlH/view?usp=drive_link"
+    }
+
+],
+
+"হিসাববিজ্ঞান ২য় পত্র": [
+
+    {
+        name: "হিসাববিজ্ঞান ২য় পত্র CQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "accounting-2nd-cq.pdf",
+        link: "https://drive.google.com/file/d/1TQmYJZv6qEo6Ss8mLRIN-jgYQIQ3Bxr-/view?usp=drive_link"
+    },
+
+    {
+        name: "হিসাববিজ্ঞান ২য় পত্র MCQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "accounting-2nd-mcq.pdf",
+        link: "https://drive.google.com/file/d/1jXPHP5AOVzQRjqaIFCul0PgQvqJtacGL/view?usp=drive_link"
+    }
+
+],
+
+"মার্কেটিং ১ম পত্র": [
+
+    {
+        name: "মার্কেটিং ১ম পত্র CQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "marketing-1st-cq.pdf",
+        link: "https://drive.google.com/file/d/1Osp-RWEPspRfd6drnVLhH3Y0BLBdHj4f/view?usp=drive_link"
+    },
+
+    {
+        name: "মার্কেটিং ১ম পত্র MCQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "marketing-1st-mcq.pdf",
+        link: "https://drive.google.com/file/d/1SM7Mcovu0w3mCB1SmstEu3mSUrlc_LlW/view?usp=drive_link"
+    }
+
+],
+
+"মার্কেটিং ২য় পত্র": [
+
+    {
+        name: "মার্কেটিং ২য় পত্র CQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "marketing-2nd-cq.pdf",
+        link: "https://drive.google.com/file/d/1HuVEGfzfUi898XNebg9mPI-0PWomEw4R/view?usp=drive_link"
+    },
+
+    {
+        name: "মার্কেটিং ২য় পত্র MCQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "marketing-2nd-mcq.pdf",
+        link: "https://drive.google.com/file/d/1nDI5gLvkzTRUgo9yUcdoo4q3PKGBb2QO/view?usp=drive_link"
+    }
+
+],
+
+"ব্যবসায় সংগঠন ও ব্যবস্থাপনা ১ম পত্র": [
+
+    {
+        name: "ব্যবসায় সংগঠন ও ব্যবস্থাপনা ১ম পত্র CQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "bus-org-1st-cq.pdf",
+        link: "https://drive.google.com/file/d/1G5Gj83dH51m87UqX3OJTLPvaTjF3U9UL/view?usp=drive_link"
+    },
+
+    {
+        name: "ব্যবসায় সংগঠন ও ব্যবস্থাপনা ১ম পত্র MCQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "bus-org-1st-mcq.pdf",
+        link: "https://drive.google.com/file/d/18nDEoZef-phebUmjhvfxdJFW5uBmovQU/view?usp=drive_link"
+    }
+
+],
+
+"ব্যবসায় সংগঠন ও ব্যবস্থাপনা ২য় পত্র": [
+
+    {
+        name: "ব্যবসায় সংগঠন ও ব্যবস্থাপনা ২য় পত্র CQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "bus-org-2nd-cq.pdf",
+        link: "https://drive.google.com/file/d/1Txl9fV6x4MiyE6nO6j5QwX4Bv3fyxuE-/view?usp=drive_link"
+    },
+
+    {
+        name: "ব্যবসায় সংগঠন ও ব্যবস্থাপনা ২য় পত্র MCQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "bus-org-2nd-mcq.pdf",
+        link: "https://drive.google.com/file/d/1fd-NZLUl7sJZJK7_3PDdGi4bfUO2xVx4/view?usp=drive_link"
+    }
+
+],
+
+"ফিন্যান্স, ব্যাংকিং ও বিমা ১ম পত্র": [
+
+    {
+        name: "ফিন্যান্স, ব্যাংকিং ও বিমা ১ম পত্র CQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "finance-1st-cq.pdf",
+        link: "https://drive.google.com/drive/folders/1Ui9hPA7279IDLd5DY9xRV0duCqCinRud?usp=drive_link"
+    },
+
+    {
+        name: "ফিন্যান্স, ব্যাংকিং ও বিমা ১ম পত্র MCQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "finance-1st-mcq.pdf",
+        link: "https://drive.google.com/drive/folders/1WWBSKxCJpXsWBYjCtIuwPxBYsiGZ3gdz?usp=drive_link"
+    }
+
+],
+
+"ফিন্যান্স, ব্যাংকিং ও বিমা ২য় পত্র": [
+
+    {
+        name: "ফিন্যান্স, ব্যাংকিং ও বিমা ২য় পত্র CQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "finance-2nd-cq.pdf",
+        link: "https://drive.google.com/file/d/11Slo9-BWOJeaIxwzo8oY7k6s9mGCaj3J/view?usp=drive_link"
+    },
+
+    {
+        name: "ফিন্যান্স, ব্যাংকিং ও বিমা ২য় পত্র MCQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "finance-2nd-mcq.pdf",
+        link: "https://drive.google.com/file/d/12Nb2mLfCD5NX6NFnYOO77fwrsg5iJVWn/view?usp=drive_link"
+    }
+
+],
+
+"পদার্থবিজ্ঞান ১ম পত্র": [
+
+    {
+        name: "পদার্থবিজ্ঞান ১ম পত্র CQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "physics-1st-cq.pdf",
+        link: "https://drive.google.com/file/d/1LvqaPsn8dOkDdtshVgRk6eEMpzxJ_dzE/view?usp=drive_link"
+    },
+
+    {
+        name: "পদার্থবিজ্ঞান ১ম পত্র MCQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "physics-1st-mcq.pdf",
+        link: "https://drive.google.com/file/d/1NiqYRXpk5eZaJjErdNdaWGWPzxUZtfig/view?usp=drive_link"
+    }
+
+],
+
+"পদার্থবিজ্ঞান ২য় পত্র": [
+
+    {
+        name: "পদার্থবিজ্ঞান ২য় পত্র CQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "physics-2nd-cq.pdf",
+        link: "https://drive.google.com/file/d/1CNZbuEV7wxUHUmomcIoniNnMzHiM_f6B/view?usp=drive_link"
+    },
+
+    {
+        name: "পদার্থবিজ্ঞান ২য় পত্র MCQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "physics-2nd-mcq.pdf",
+        link: "https://drive.google.com/file/d/1DoZCIxJDkFAe8h99iX8Ac4q4dXMFIdDt/view?usp=drive_link"
+    }
+
+],
+
+"রসায়ন ১ম পত্র": [
+
+    {
+        name: "রসায়ন ১ম পত্র CQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "chemistry-1st-cq.pdf",
+        link: "https://drive.google.com/file/d/1_bAyKjnPgg57sXi9IxREWGW3Vm0JFpAy/view?usp=drive_link"
+    },
+
+    {
+        name: "রসায়ন ১ম পত্র MCQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "chemistry-1st-mcq.pdf",
+        link: "https://drive.google.com/file/d/1IdfaVClsguENiS4HwkwKmS3Kf4mg2DyO/view?usp=drive_link"
+    }
+
+],
+
+"রসায়ন ২য় পত্র": [
+
+    {
+        name: "রসায়ন ২য় পত্র CQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "chemistry-2nd-cq.pdf",
+        link: "https://drive.google.com/file/d/1azfGMfWFSnpVaZzQDxAHRHqfoDrAu4MG/view?usp=drive_link"
+    },
+
+    {
+        name: "রসায়ন ২য় পত্র MCQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "chemistry-2nd-mcq.pdf",
+        link: "https://drive.google.com/file/d/13UfU6Xcl4vzE8YsmOf2UXYjB5kIw4zQt/view?usp=drive_link"
+    }
+
+],
+
+"উচ্চতর গণিত ১ম পত্র": [
+
+    {
+        name: "উচ্চতর গণিত ১ম পত্র CQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "higher-math-1st-cq.pdf",
+        link: "https://drive.google.com/file/d/1B9WNBzZZBel8xT4MvmrTSwzhZ5Mks52U/view?usp=drive_link"
+    },
+
+    {
+        name: "উচ্চতর গণিত ১ম পত্র MCQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "higher-math-1st-mcq.pdf",
+        link: "https://drive.google.com/file/d/1rIf1p8XTwIwH0DoJLgi50o6mI4R3FOg8/view?usp=drive_link"
+    }
+
+],
+
+"উচ্চতর গণিত ২য় পত্র": [
+
+    {
+        name: "উচ্চতর গণিত ২য় পত্র CQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "higher-math-2nd-cq.pdf",
+        link: "https://drive.google.com/file/d/1YPgAX4REhsoFH0NxAxMw7BFWeQS07ArN/view?usp=drive_link"
+    },
+
+    {
+        name: "উচ্চতর গণিত ২য় পত্র MCQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "higher-math-2nd-mcq.pdf",
+        link: "https://drive.google.com/file/d/14b5nxJ82yijLTPJVHcZdUeSsG0zB1_KM/view?usp=drive_link"
+    }
+
+],
+
+"জীববিজ্ঞান ১ম পত্র": [
+
+    {
+        name: "জীববিজ্ঞান ১ম পত্র CQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "biology-1st-cq.pdf",
+        link: "https://drive.google.com/file/d/1ztDy1ZvxvzzP48IjrCukPIacfMzpHw9h/view?usp=drive_link"
+    },
+
+    {
+        name: "জীববিজ্ঞান ১ম পত্র MCQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "biology-1st-mcq.pdf",
+        link: "https://drive.google.com/file/d/1mEzZsPMThdGpc7jEliL4qvkaH0Ffosej/view?usp=drive_link"
+    }
+
+],
+
+"জীববিজ্ঞান ২য় পত্র": [
+
+    {
+        name: "জীববিজ্ঞান ২য় পত্র CQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "biology-2nd-cq.pdf",
+        link: "https://drive.google.com/file/d/117AYb6mDHgboQJWltwxXt4GsUOJVV84T/view?usp=drive_link"
+    },
+
+    {
+        name: "জীববিজ্ঞান ২য় পত্র MCQ (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "biology-2nd-mcq.pdf",
+        link: "https://drive.google.com/file/d/1M_5w_8iicPrU5dlnVFJUv0XZ2Y3G5td_/view?usp=drive_link"
+    }
+
+],
 
 "ইতিহাস ১ম পত্র": [
 
     {
         name: "ইতিহাস ১ম পত্র CQ (সমাধান শীট)",
         size: "৫.৪ MB",
-        file: "ইতিহাস ১ম পত্র CQ.pdf",
+        file: "history-1st-cq.pdf",
         link: "https://drive.google.com/file/d/10Ts02UeFICaNQ0cZ2w3p9ZNmRifNXnww/view?usp=drive_link"
     },
 
     {
         name: "ইতিহাস ১ম পত্র MCQ (সমাধান শীট)",
         size: "৫.৪ MB",
-        file: "ইতিহাস ১ম পত্র MCQ.pdf",
+        file: "history-1st-mcq.pdf",
         link: "https://drive.google.com/file/d/1ZWPCKSEx1LoD4W47Futk9S0J_I0bJxpC/view?usp=drive_link"
     }
+
 ],
 
-
-// =================================================
-// ইতিহাস ২য় পত্র
-// =================================================
-
-"ইতিহাস ২য় পত্র": [
+"ইতিহাস ২য় পত্র": [
 
     {
-        name: "ইতিহাস ২য় পত্র CQ (সমাধান শীট)",
+        name: "ইতিহাস ২য় পত্র CQ (সমাধান শীট)",
         size: "৫.৪ MB",
-        file: "ইতিহাস ২য় পত্র CQ.pdf",
+        file: "history-2nd-cq.pdf",
         link: "https://drive.google.com/file/d/11ZKegEfGi4k2lrdP1SwledRgZzqHF_kQ/view?usp=drive_link"
     },
 
     {
-        name: "ইতিহাস ২য় পত্র MCQ (সমাধান শীট)",
+        name: "ইতিহাস ২য় পত্র MCQ (সমাধান শীট)",
         size: "৫.৪ MB",
-        file: "ইতিহাস ২য় পত্র MCQ.pdf",
+        file: "history-2nd-mcq.pdf",
         link: "https://drive.google.com/file/d/12a3V3nsVjSO6ocRDVCPBGuEedaX40tI3/view?usp=drive_link"
     }
+
 ],
-
-
-// =================================================
-// পৌরনীতি ও সুশাসন ১ম পত্র
-// =================================================
-
-"পৌরনীতি ও সুশাসন ১ম পত্র": [
-
-    {
-        name: "পৌরনীতি ও সুশাসন ১ম পত্র CQ (সমাধান শীট)",
-        size: "৫.৪ MB",
-        file: "পৌরনীতি ও সুশাসন ১ম পত্র CQ.pdf",
-        link: "YOUR_GOOGLE_DRIVE_LINK"
-    },
-
-    {
-        name: "পৌরনীতি ও সুশাসন ১ম পত্র MCQ (সমাধান শীট)",
-        size: "৫.৪ MB",
-        file: "পৌরনীতি ও সুশাসন ১ম পত্র MCQ.pdf",
-        link: "YOUR_GOOGLE_DRIVE_LINK"
-    }
-],
-
-
-// =================================================
-// পৌরনীতি ও সুশাসন ২য় পত্র
-// =================================================
-
-"পৌরনীতি ও সুশাসন ২য় পত্র": [
-
-    {
-        name: "পৌরনীতি ও সুশাসন ২য় পত্র CQ (সমাধান শীট)",
-        size: "৫.৪ MB",
-        file: "পৌরনীতি ও সুশাসন ২য় পত্র CQ.pdf",
-        link: "YOUR_GOOGLE_DRIVE_LINK"
-    },
-
-    {
-        name: "পৌরনীতি ও সুশাসন ২য় পত্র MCQ (সমাধান শীট)",
-        size: "৫.৪ MB",
-        file: "পৌরনীতি ও সুশাসন ২য় পত্র MCQ.pdf",
-        link: "YOUR_GOOGLE_DRIVE_LINK"
-    }
-],
-
-
-// =================================================
-// ভূগোল ১ম পত্র
-// =================================================
-
-"ভূগোল ১ম পত্র": [
-
-    {
-        name: "ভূগোল ১ম পত্র CQ (সমাধান শীট)",
-        size: "৫.৪ MB",
-        file: "ভূগোল ১ম পত্র CQ.pdf",
-        link: "YOUR_GOOGLE_DRIVE_LINK"
-    },
-
-    {
-        name: "ভূগোল ১ম পত্র MCQ (সমাধান শীট)",
-        size: "৫.৪ MB",
-        file: "ভূগোল ১ম পত্র MCQ.pdf",
-        link: "YOUR_GOOGLE_DRIVE_LINK"
-    }
-],
-
-
-// =================================================
-// ভূগোল ২য় পত্র
-// =================================================
-
-"ভূগোল ২য় পত্র": [
-
-    {
-        name: "ভূগোল ২য় পত্র CQ (সমাধান শীট)",
-        size: "৫.৪ MB",
-        file: "ভূগোল ২য় পত্র CQ.pdf",
-        link: "YOUR_GOOGLE_DRIVE_LINK"
-    },
-
-    {
-        name: "ভূগোল ২য় পত্র MCQ (সমাধান শীট)",
-        size: "৫.৪ MB",
-        file: "ভূগোল ২য় পত্র MCQ.pdf",
-        link: "YOUR_GOOGLE_DRIVE_LINK"
-    }
-],
-
-
-// =================================================
-// অর্থনীতি ১ম পত্র
-// =================================================
 
 "অর্থনীতি ১ম পত্র": [
 
     {
         name: "অর্থনীতি ১ম পত্র CQ (সমাধান শীট)",
         size: "৫.৪ MB",
-        file: "অর্থনীতি ১ম পত্র CQ.pdf",
+        file: "economics-1st-cq.pdf",
         link: "https://drive.google.com/file/d/1-HaQOoMpMUIXCfjdc32UW6rK9p_rC6Fa/view?usp=drive_link"
     },
 
     {
         name: "অর্থনীতি ১ম পত্র MCQ (সমাধান শীট)",
         size: "৫.৪ MB",
-        file: "অর্থনীতি ১ম পত্র MCQ.pdf",
+        file: "economics-1st-mcq.pdf",
         link: "https://drive.google.com/file/d/10Tzyl14YlApDSxLthn40Uu1kJPpRUn0U/view?usp=drive_link"
     }
+
 ],
 
-
-// =================================================
-// অর্থনীতি ২য় পত্র
-// =================================================
-
-"অর্থনীতি ২য় পত্র": [
+"অর্থনীতি ২য় পত্র": [
 
     {
-        name: "অর্থনীতি ২য় পত্র CQ (সমাধান শীট)",
+        name: "অর্থনীতি ২য় পত্র CQ (সমাধান শীট)",
         size: "৫.৪ MB",
-        file: "অর্থনীতি ২য় পত্র CQ.pdf",
+        file: "economics-2nd-cq.pdf",
         link: "https://drive.google.com/file/d/11P2u7vZIcPvdbLxKTzpgBH30z4uI4b8z/view?usp=drive_link"
     },
 
     {
-        name: "অর্থনীতি ২য় পত্র MCQ (সমাধান শীট)",
+        name: "অর্থনীতি ২য় পত্র MCQ (সমাধান শীট)",
         size: "৫.৪ MB",
-        file: "অর্থনীতি ২য় পত্র MCQ.pdf",
+        file: "economics-2nd-mcq.pdf",
         link: "https://drive.google.com/file/d/12IjZYmFAI6bMdafqX8Zr0absW9IGjLh0/view?usp=drive_link"
-    }
-],  
-
     },
+
+]
+},
+        "SSC": {
+          "বাংলা ১ম পত্র": [
+
+    {
+        name: "গদ্য — অধ্যায়ভিত্তিক সমাধান",
+        size: "৩.৮ MB",
+        file: "ssc-bangla-1st.pdf",
+        link: "https://drive.google.com/drive/folders/1mxgh5jizleMjjv9S13pgQXmIguAFhzuh?usp=drive_link"
+    },
+     {
+        name: "কবিতা — অধ্যায়ভিত্তিক সমাধান",
+        size: "৩.৮ MB",
+        file: "ssc-bangla-1st.pdf",
+        link: "https://drive.google.com/drive/folders/1J0OnZ94msK0uNMEEkzODR23U64qvswtm?usp=drive_link"
+    },
+     {
+        name: "সহপাঠ — অধ্যায়ভিত্তিক সমাধান",
+        size: "৩.৮ MB",
+        file: "ssc-bangla-1st.pdf",
+        link: "https://drive.google.com/drive/folders/1o0W3Wcy4PC_0SuhGM_qux4qYWnrqzpfS?usp=drive_link"
+    }
+
+],
+
+"বাংলা ২য় পত্র": [
+
+    {
+        name: "বাংলা ব্যাকরণ ও নির্মিতি — সমাধান শীট",
+        size: "৩.৯ MB",
+        file: "ssc-bangla-2nd.pdf",
+        link: "https://drive.google.com/file/d/1tL5VR1O8EWzSd380FqnzNZyK-cv4nf-1/view?usp=drive_link"
+    }
+
+],
+
+"ইংরেজি ১ম পত্র": [
+
+    {
+        name: "English 1st Paper — Chapter-wise Solution",
+        size: "৪.১ MB",
+        file: "ssc-english-1st.pdf",
+        link: "https://drive.google.com/drive/folders/1fFI-u-8itgEKyU8rmfVKyI410K2ne4is?usp=drive_link"
+    }
+
+],
+
+"ইংরেজি ২য় পত্র": [
+
+    {
+        name: "English 2nd Paper — Grammar & Writing Solution",
+        size: "৪.০ MB",
+        file: "ssc-english-2nd.pdf",
+        link: "https://drive.google.com/file/d/1ypEcz_KPHFi5NqgzDKa9BzAn6J22XjA6/view?usp=drive_link"
+    }
+
+],
+
+"গণিত": [
+
+    {
+        name: "গণিত — সমাধান শীট",
+        size: "৩.৯ MB",
+        file: "ssc-math.pdf",
+        link: "https://drive.google.com/drive/folders/1Sk23F93GXmwUmnL9X30ONPSDeuP0EgxE?usp=drive_link"
+    }
+
+],
+
+"সাধারণ বিজ্ঞান": [
+
+    {
+        name: "সাধারণ বিজ্ঞান — সমাধান শীট",
+        size: "৩.৯ MB",
+        file: "ssc-general-science.pdf",
+        link: "https://drive.google.com/drive/folders/1LZgfrC9tXctUIXMFEFUDRbyXgf7-44At?usp=drive_link"
+    }
+
+],
+"পদার্থবিজ্ঞান (Physics)": [
+
+    {
+        name: "পদার্থবিজ্ঞান CQ ও MCQ",
+        size: "৫.২ MB",
+        file: "ssc-physics-all.pdf",
+        link: "https://drive.google.com/drive/folders/1heJRHt451giUoG6N4n1trmJ3IYxPNJiI?usp=sharing"
+    }
+
+],
+
+"রসায়ন (Chemistry)": [
+
+    {
+        name: "রসায়ন — অধ্যায়ভিত্তিক CQ ও MCQ",
+        size: "৪.৬ MB",
+        file: "ssc-chemistry-all.pdf",
+        link: "https://drive.google.com/drive/folders/1QHeQ6cLLXIl1M2N0GZHWTbECXPuPqf65?usp=sharing"
+    }
+
+],
+
+"উচ্চতর গণিত (Higher Math)": [
+
+    {
+        name: "উচ্চতর গণিত — অধ্যায়ভিত্তিক CQ ও MCQ",
+        size: "৫.১ MB",
+        file: "ssc-higher-math-all.pdf",
+        link: "https://drive.google.com/drive/folders/1bJQIdFZ4cJxP3JLh62EY4EkNehaheS_H?usp=sharing"
+    }
+
+],
+
+"জীববিজ্ঞান (Biology)": [
+
+    {
+        name: "জীববিজ্ঞান — অধ্যায়ভিত্তিক CQ ও MCQ",
+        size: "৪.৭ MB",
+        file: "ssc-biology-all.pdf",
+        link: "https://drive.google.com/drive/folders/1NrnKJ1cIRvV4QY8KhG4H-EKLjGsNl7SC?usp=sharing"
+    }
+
+],
+
+"তথ্য ও যোগাযোগ প্রযুক্তি (ICT)": [
+
+    {
+        name: "SSC ICT — অধ্যায়ভিত্তিক সমাধান",
+        size: "৪.০ MB",
+        file: "ssc-ict-all.pdf",
+        link: "https://drive.google.com/file/d/1lZFfoaUqHzEvAvwklv6Ao-429DBDa-1a/view?usp=drive_link"
+    }
+
+],
+
+"ইতিহাস ও বিশ্বসভ্যতা": [
+
+    {
+        name: "ইতিহাস ও বিশ্বসভ্যতা — অধ্যায়ভিত্তিক সমাধান",
+        size: "৪.৩ MB",
+        file: "ssc-history-all.pdf",
+        link: "PDF_LINK"
+    }
+
+],
+
+"অর্থনীতি": [
+    {
+        name: "অর্থনীতি (সমাধান শীট)",
+        size: "৫.৪ MB",
+        file: "economics-1st-mcq.pdf",
+        link: "https://drive.google.com/drive/folders/16IR4XQXg9I5xs5NaAlQAoSl2v_OE82MB?usp=sharing"
+    }
+
+],
+
+"পৌরনীতি ও নাগরিকতা": [
+
+    {
+        name: "পৌরনীতি ও নাগরিকতা — অধ্যায়ভিত্তিক সমাধান",
+        size: "৪.২ MB",
+        file: "ssc-civics-all.pdf",
+        link: "https://drive.google.com/drive/folders/14mB_Ksf7ZWus4DbmTwq922gPlCRltnDA?usp=sharing"
+    }
+
+],
+
+"ভূগোল ও পরিবেশ": [
+
+    {
+        name: "ভূগোল ও পরিবেশ — অধ্যায়ভিত্তিক সমাধান",
+        size: "৪.৪ MB",
+        file: "ssc-geography-all.pdf",
+        link: "https://drive.google.com/drive/folders/10lLmJsWADOhtv-GzX6E2ucFi3hdYjhXd?usp=sharing"
+    }
+
+],
+
+"হিসাববিজ্ঞান (Accounting)": [
+
+    {
+        name: "হিসাববিজ্ঞান — অধ্যায়ভিত্তিক CQ ও MCQ",
+        size: "৪.৮ MB",
+        file: "ssc-accounting-all.pdf",
+        link: "https://drive.google.com/drive/folders/1T66aHNnFJjr6BcIoLbMmJVc2Mb9KYE4y?usp=sharing"
+    }
+
+],
+
+"ফিন্যান্স ও ব্যাংকিং": [
+
+    {
+        name: "ফিন্যান্স ও ব্যাংকিং — অধ্যায়ভিত্তিক সমাধান",
+        size: "৪.৫ MB",
+        file: "ssc-finance-all.pdf",
+        link: "https://drive.google.com/drive/folders/1Gy__vkQtOEEAgH1QTPNO9XOZ8mO-AJoO?usp=sharing"
+    }
+
+],
+
+"ব্যবসায় উদ্যোগ": [
+
+    {
+        name: "ব্যবসায় উদ্যোগ — অধ্যায়ভিত্তিক সমাধান",
+        size: "৪.১ MB",
+        file: "ssc-business-all.pdf",
+        link: "https://drive.google.com/drive/folders/12bQADez7IhQFGN0Ijs0Flb56WvGCV1v_?usp=sharing"
+    },
+     ]
+        }
+    }
+};
+// =================================================
+// EXAM-SAFE PDF FALLBACK SYSTEM
+// =================================================
+
+const DEFAULT_FALLBACK_PDF = {
+    name: "ডিফল্ট সলিউশন PDF",
+    size: "৩.৫ MB",
+    file: "default-solution.pdf",
+    link: "PDF_LINK"
 };
 
+function getDynamicGroupKey(exam, groupName) {
+    if (!exam || !groupName) return null;
 
-// =================================================
-// FALLBACK SYSTEM
-// =================================================
-
-const allSystemSubjects = [
-
-    "পদার্থবিজ্ঞান (Physics)",
-    "রসায়ন (Chemistry)",
-    "উচ্চতর গণিত (Higher Math)",
-    "জীববিজ্ঞান (Biology)",
-    "ইতিহাস ও বিশ্বসভ্যতা",
-    "পৌরনীতি ও নাগরিকতা",
-    "ভূগোল ও পরিবেশ",
-    "হিসাববিজ্ঞান (Accounting)",
-    "ফিন্যান্স ও ব্যাংকিং",
-    "ব্যবসায় উদ্যোগ",
-
-    "ইতিহাস ১ম পত্র",
-    "ইতিহাস ২য় পত্র",
-
-    "পৌরনীতি ও সুশাসন ১ম পত্র",
-    "পৌরনীতি ও সুশাসন ২য় পত্র",
-
-    "ভূগোল ১ম পত্র",
-    "ভূগোল ২য় পত্র",
-
-    "অর্থনীতি ১ম পত্র",
-    "অর্থনীতি ২য় পত্র",
-
-    "হিসাববিজ্ঞান ১ম পত্র",
-    "হিসাববিজ্ঞান ২য় পত্র",
-
-    "ব্যবসায় সংগঠন ও ব্যবস্থাপনা ১ম পত্র",
-    "ব্যবসায় সংগঠন ও ব্যবস্থাপনা ২য় পত্র",
-
-    "ফিন্যান্স, ব্যাংকিং ও বিমা ১ম পত্র",
-    "ফিন্যান্স, ব্যাংকিং ও বিমা ২য় পত্র",
-
-    "রসায়ন ১ম পত্র",
-    "রসায়ন ২য় পত্র",
-
-    "উচ্চতর গণিত ১ম পত্র",
-    "উচ্চতর গণিত ২য় পত্র",
-
-    "জীববিজ্ঞান ১ম পত্র",
-    "জীববিজ্ঞান ২য় পত্র",
-
-    "বিশ্ববিদ্যালয় ক-ইউনিট প্রশ্নব্যাংক",
-    "ইঞ্জিনিয়ারিং ভর্তি সমাধান",
-    "মেডিকেল ভর্তি সলিউশন",
-
-    "ঢাবি খ-ইউনিট ভর্তি সমাধান",
-    "জিএসটি (GST) মানবিক ভর্তি গাইড",
-
-    "ঢাবি গ-ইউনিট ভর্তি গাইড",
-    "জিএসটি ব্যবসায় শিক্ষা সমাধান"
-];
-
-
-// =================================================
-// AUTO FALLBACK
-// =================================================
-
-allSystemSubjects.forEach(sub => {
-
-    if (!educationDatabase.chapters[sub]) {
-
-        educationDatabase.chapters[sub] = [
-
-            {
-                name: `${sub} ১ম অধ্যায় সৃজনশীল সমাধান পত্র`,
-                size: "৩.৫ MB",
-                file: `${sub.toLowerCase()}-chap1.pdf`,
-                link: "https://drive.google.com"
-            },
-
-            {
-                name: `বিগত বছরের ${sub} বোর্ড প্রশ্নের নির্ভুল উত্তর শীট`,
-                size: "৫.৪ MB",
-                file: `${sub.toLowerCase()}-board-solutions.pdf`,
-                link: "https://drive.google.com"
-            }
-
-        ];
+    if (exam === "Admission") {
+        if (groupName.includes("A Unit")) return "Adm_A";
+        if (groupName.includes("B Unit")) return "Adm_B";
+        if (groupName.includes("C Unit")) return "Adm_C";
+        return null;
     }
 
-});
+    let group = "";
 
-        // HERO BANNER CAROUSEL SYSTEM DATA
-        const bannerRotations = [
-            {
-                title: "এসএসসি ও এইচএসসি পরীক্ষার নির্ভুল সমাধান",
-                subtitle: "সকল শিক্ষাবোর্ডের বিগত ১০ বছরের সকল সেট প্রশ্নের অধ্যায়ভিত্তিক সমাধান এখন এক ক্লিকে ডাউনলোড করুন।",
-                graphic: "👨‍🎓"
-            },
-            {
-                title: "বিশ্ববিদ্যালয় ভর্তি পরীক্ষার প্রশ্ন ব্যাংক সমাধান",
-                subtitle: "মেডিকেল, বুয়েট এবং ঢাকা বিশ্ববিদ্যালয়ের বিগত ২০ বছরের প্রশ্ন সমাধানের সবচেয়ে বড় কালেকশন এখন সম্পূর্ণ ফ্রীতে।",
-                graphic: "🎓"
-            },
-            {
-                title: "আইসিটি ও বাংলা ১ম পত্রের স্পেশাল বুকলেট",
-                subtitle: "এইচএসসি ২০২৬ সিলেবাসের ২৪টি গদ্য-পদ্য এবং আইসিটির সকল কোডিং প্র্যাকটিস সমাধান শিট সরাসরি ডাউনলোড করুন।",
-                graphic: "💻"
-            },
-            {
-                title: "স্মার্ট সার্চ ফিল্টার দিয়ে খুব সহজেই খুঁজুন",
-                subtitle: "কোনো ঝামেলা ছাড়াই সার্চ বারে বিষয়ের নাম বা অধ্যায়ের নাম লিখে তাৎক্ষণিক খুঁজে বের করুন কাঙ্ক্ষিত সলভ শীট।",
-                graphic: "🔍"
-            }
-        ];
-        let currentSliderIndex = 0;
+    if (groupName.includes("Science")) group = "Science";
+    else if (groupName.includes("Arts")) group = "Arts";
+    else if (groupName.includes("Commerce")) group = "Commerce";
 
-        function setSliderIndex(index) {
-            currentSliderIndex = index;
-            const titleEl = document.getElementById('slider-title');
-            const subtitleEl = document.getElementById('slider-subtitle');
-            const graphicEl = document.getElementById('slider-graphic');
+    return group ? `${exam}_${group}` : null;
+}
 
-            titleEl.style.opacity = '0';
-            subtitleEl.style.opacity = '0';
-            graphicEl.style.opacity = '0';
+function getSubjectPDFs(exam, subjectName) {
+    const examData = educationDatabase.chapters[exam];
 
-            setTimeout(() => {
-                titleEl.innerText = bannerRotations[index].title;
-                subtitleEl.innerText = bannerRotations[index].subtitle;
-                graphicEl.innerText = bannerRotations[index].graphic;
+    if (!examData) return [DEFAULT_FALLBACK_PDF];
 
-                titleEl.style.opacity = '1';
-                subtitleEl.style.opacity = '1';
-                graphicEl.style.opacity = '1';
-            }, 300);
+    const pdfs = examData[subjectName];
 
-            for (let i = 0; i < 4; i++) {
-                const dot = document.getElementById(`slider-dot-${i}`);
-                if (i === index) {
-                    dot.className = "w-6 h-3 rounded-full transition-all duration-300 bg-indigo-500 shadow-glow";
-                } else {
-                    dot.className = "w-3 h-3 rounded-full transition-all duration-300 bg-white/40 hover:bg-white/70";
-                }
+    if (!Array.isArray(pdfs) || pdfs.length === 0) {
+        return [DEFAULT_FALLBACK_PDF];
+    }
+
+    const valid = pdfs.filter(pdf =>
+        pdf &&
+        typeof pdf === "object" &&
+        pdf.link &&
+        pdf.link !== "#"
+    );
+
+    return valid.length ? valid : [DEFAULT_FALLBACK_PDF];
+}
+// =================================================
+// HERO BANNER CAROUSEL SYSTEM
+// =================================================
+
+const bannerRotations = [
+    {
+        title: "এসএসসি ও এইচএসসি পরীক্ষার নির্ভুল সমাধান",
+        subtitle: "সকল শিক্ষাবোর্ডের বিগত ১০ বছরের সকল সেট প্রশ্নের অধ্যায়ভিত্তিক সমাধান এখন এক ক্লিকে ডাউনলোড করুন।",
+        graphic: "👨‍🎓"
+    },
+    {
+        title: "বিশ্ববিদ্যালয় ভর্তি পরীক্ষার প্রশ্ন ব্যাংক সমাধান",
+        subtitle: "মেডিকেল, বুয়েট এবং ঢাকা বিশ্ববিদ্যালয়ের বিগত ২০ বছরের প্রশ্ন সমাধানের সবচেয়ে বড় কালেকশন এখন সম্পূর্ণ ফ্রীতে।",
+        graphic: "🎓"
+    },
+    {
+        title: "আইসিটি ও বাংলা ১ম পত্রের স্পেশাল বুকলেট",
+        subtitle: "এইচএসসি সিলেবাসের ২৪টি গদ্য-পদ্য এবং আইসিটির সকল কোডিং প্র্যাকটিস সমাধান শিট সরাসরি ডাউনলোড করুন।",
+        graphic: "💻"
+    },
+    {
+        title: "স্মার্ট সার্চ ফিল্টার দিয়ে খুব সহজেই খুঁজুন",
+        subtitle: "কোনো ঝামেলা ছাড়াই সার্চ বারে বিষয়ের নাম বা অধ্যায়ের নাম লিখে তাৎক্ষণিক খুঁজে বের করুন কাঙ্ক্ষিত সলভ শীট।",
+        graphic: "🔍"
+    }
+];
+
+let currentSliderIndex = 0;
+
+function setSliderIndex(index) {
+    currentSliderIndex = index;
+    const titleEl = document.getElementById('slider-title');
+    const subtitleEl = document.getElementById('slider-subtitle');
+    const graphicEl = document.getElementById('slider-graphic');
+
+    if (!titleEl || !subtitleEl || !graphicEl) return;
+
+    titleEl.style.opacity = '0';
+    subtitleEl.style.opacity = '0';
+    graphicEl.style.opacity = '0';
+
+    setTimeout(() => {
+        titleEl.innerText = bannerRotations[index].title;
+        subtitleEl.innerText = bannerRotations[index].subtitle;
+        graphicEl.innerText = bannerRotations[index].graphic;
+
+        titleEl.style.opacity = '1';
+        subtitleEl.style.opacity = '1';
+        graphicEl.style.opacity = '1';
+    }, 300);
+
+    for (let i = 0; i < bannerRotations.length; i++) {
+        const dot = document.getElementById(`slider-dot-${i}`);
+        if (dot) {
+            if (i === index) {
+                dot.className = "w-6 h-3 rounded-full transition-all duration-300 bg-indigo-500 shadow-glow";
+            } else {
+                dot.className = "w-3 h-3 rounded-full transition-all duration-300 bg-white/40 hover:bg-white/70";
             }
         }
-
+    }
+}
         // Auto Slider Runner
         setInterval(() => {
             currentSliderIndex = (currentSliderIndex + 1) % 4;
             setSliderIndex(currentSliderIndex);
         }, 6000);
 
-        // REALTIME SEARCH ENGINE (POWERFUL SEARCH ACROSS ALL SUBJECTS AND CHAPTERS)
+        // REALTIME SEARCH ENGINE
         function executeSearch(query) {
             const resultsBox = document.getElementById('search-results-box');
-            if (!query.trim()) {
+            const q = String(query || '').trim().toLowerCase();
+
+            if (!q) {
                 resultsBox.classList.add('hidden');
+                resultsBox.innerHTML = '';
                 return;
             }
 
-            let matches = [];
-            const lowercaseQuery = query.toLowerCase();
+            const matches = [];
 
-            // Search through subject databases
-            for (let subject in educationDatabase.chapters) {
-                educationDatabase.chapters[subject].forEach(fileObj => {
-                    if (fileObj.name.toLowerCase().includes(lowercaseQuery) || subject.toLowerCase().includes(lowercaseQuery)) {
-                        matches.push({
-                            subject: subject,
-                            name: fileObj.name,
-                            size: fileObj.size,
-                            link: fileObj.link
-                        });
-                    }
+            ['SSC', 'HSC'].forEach(exam => {
+                const examChapters = educationDatabase.chapters[exam] || {};
+
+                Object.entries(examChapters).forEach(([subject, files]) => {
+                    if (!Array.isArray(files)) return;
+
+                    files.forEach(fileObj => {
+                        if (!fileObj) return;
+
+                        const searchable =
+                            `${exam} ${subject} ${fileObj.name || ''}`.toLowerCase();
+
+                        if (searchable.includes(q)) {
+                            matches.push({
+                                exam,
+                                subject,
+                                name: fileObj.name || 'PDF Solution',
+                                size: fileObj.size || 'N/A',
+                                link: fileObj.link || DEFAULT_FALLBACK_PDF.link
+                            });
+                        }
+                    });
                 });
-            }
+            });
 
-            if (matches.length === 0) {
+            if (!matches.length) {
                 resultsBox.innerHTML = `
                     <div class="py-6 text-center text-slate-400 dark:text-slate-500 text-sm">
                         <i class="fa-solid fa-face-frown text-3xl mb-2 block"></i>
@@ -2110,17 +2097,25 @@ allSystemSubjects.forEach(sub => {
                 `;
             } else {
                 resultsBox.innerHTML = `
-                    <h5 class="text-xs font-bold text-indigo-600 dark:text-premium-neonIndigo uppercase tracking-wider mb-3">সার্চের ফলাফল (${matches.length} টি ফাইল পাওয়া গেছে)</h5>
+                    <h5 class="text-xs font-bold text-indigo-600 dark:text-premium-neonIndigo uppercase tracking-wider mb-3">
+                        সার্চের ফলাফল (${matches.length} টি ফাইল পাওয়া গেছে)
+                    </h5>
+
                     <div class="space-y-2">
-                        ${matches.map(match => `
-                            <div onclick="openPdfModal('${match.name.replace(/'/g, "\\'")}', '${match.size}', '${match.link}')" class="flex items-center justify-between p-3.5 bg-slate-50 hover:bg-indigo-50 dark:bg-slate-900/60 dark:hover:bg-slate-800 rounded-xl cursor-pointer transition-all border border-slate-100 dark:border-slate-800/80 group">
-                                <div class="flex items-center gap-3">
+                        ${matches.map((match, index) => `
+                            <div data-search-index="${index}"
+                                 class="search-result-item flex items-center justify-between p-3.5 bg-slate-50 hover:bg-indigo-50 dark:bg-slate-900/60 dark:hover:bg-slate-800 rounded-xl cursor-pointer transition-all border border-slate-100 dark:border-slate-800/80 group">
+                                <div class="flex items-center gap-3 min-w-0">
                                     <div class="w-8 h-8 rounded-lg bg-red-100 dark:bg-red-950/50 text-red-500 flex items-center justify-center text-xs flex-shrink-0">
                                         <i class="fa-solid fa-file-pdf"></i>
                                     </div>
-                                    <div>
-                                        <h6 class="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 group-hover:text-indigo-600 dark:group-hover:text-premium-neonIndigo transition-colors leading-snug">${match.name}</h6>
-                                        <span class="text-[10px] text-slate-400 block mt-0.5 font-semibold">${match.subject} | সাইজ: ${match.size}</span>
+                                    <div class="min-w-0">
+                                        <h6 class="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 group-hover:text-indigo-600 dark:group-hover:text-premium-neonIndigo transition-colors leading-snug">
+                                            ${match.name}
+                                        </h6>
+                                        <span class="text-[10px] text-slate-400 block mt-0.5 font-semibold">
+                                            ${match.exam} • ${match.subject} • ${match.size}
+                                        </span>
                                     </div>
                                 </div>
                                 <i class="fa-solid fa-arrow-right text-slate-300 dark:text-slate-600 group-hover:text-indigo-500 transition-colors ml-2"></i>
@@ -2128,7 +2123,15 @@ allSystemSubjects.forEach(sub => {
                         `).join('')}
                     </div>
                 `;
+
+                resultsBox.querySelectorAll('.search-result-item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        const match = matches[Number(item.dataset.searchIndex)];
+                        openPdfModal(match.name, match.size, match.link);
+                    });
+                });
             }
+
             resultsBox.classList.remove('hidden');
         }
 
@@ -2146,47 +2149,62 @@ allSystemSubjects.forEach(sub => {
         });
 
         // CASCADE NAVIGATION CONTROLLER
+
         function selectExam(exam, element) {
+            if (!educationDatabase.groups[exam]) return;
+
             appState.exam = exam;
             appState.group = '';
             appState.subject = '';
 
             playUIAudio('click');
 
-            // Apply flash effect
-            element.classList.add('animate_flash');
-            setTimeout(() => {
-                element.classList.remove('animate_flash');
-            }, 350);
-
-            // Active card state UI marking
             document.querySelectorAll('#workflowContainer .premium-card').forEach(card => {
-                card.classList.remove('border-indigo-600', 'bg-indigo-50/50', 'ring-4', 'ring-indigo-100', 'dark:ring-indigo-900/40');
+                card.classList.remove(
+                    'border-indigo-600',
+                    'bg-indigo-50/50',
+                    'ring-4',
+                    'ring-indigo-100',
+                    'dark:ring-indigo-900/40'
+                );
             });
-            element.classList.add('border-indigo-600', 'ring-4', 'ring-indigo-100', 'dark:ring-indigo-900/40');
 
-            // Update Progress Steps visually
-            const badge1 = document.getElementById('step-badge-1');
-            badge1.innerHTML = '<i class="fa-solid fa-check"></i>';
-            badge1.className = "w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs";
+            if (element) {
+                element.classList.add(
+                    'border-indigo-600',
+                    'ring-4',
+                    'ring-indigo-100',
+                    'dark:ring-indigo-900/40',
+                    'animate_flash'
+                );
+
+                setTimeout(() => element.classList.remove('animate_flash'), 350);
+            }
+
+            document.getElementById('step-badge-1').innerHTML =
+                '<i class="fa-solid fa-check"></i>';
+
+            document.getElementById('step-badge-1').className =
+                'w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs';
+
             document.getElementById('step-line-2').style.opacity = '1';
             document.getElementById('step-badge-2').classList.add('pulse-indicator');
 
-            // Populate Step 2 Groups dynamically
-            const groups = educationDatabase.groups[exam];
-            const groupTitle = document.getElementById('group-title-label');
-            groupTitle.innerText = `২. ${exam} পরীক্ষার গ্রুপ বা বিভাগ নির্বাচন করুন`;
-            
+            document.getElementById('group-title-label').innerText =
+                `২. ${exam} পরীক্ষার গ্রুপ বা বিভাগ নির্বাচন করুন`;
+
             const groupInner = document.getElementById('groups-inner-grid');
             groupInner.innerHTML = '';
 
-            groups.forEach(groupName => {
+            educationDatabase.groups[exam].forEach(groupName => {
                 const groupCard = document.createElement('div');
-                groupCard.className = "premium-card p-6 rounded-[22px] bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800/80 hover:border-indigo-500 cursor-pointer flex items-center gap-4 transition-all duration-300 transform hover:-translate-y-0.5 group";
-                
-                let emoji = "🔬";
-                if(groupName.includes("Arts") || groupName.includes("B Unit")) emoji = "🏛️";
-                if(groupName.includes("Commerce") || groupName.includes("C Unit")) emoji = "📊";
+
+                groupCard.className =
+                    'premium-card p-6 rounded-[22px] bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800/80 hover:border-indigo-500 cursor-pointer flex items-center gap-4 transition-all duration-300 transform hover:-translate-y-0.5 group';
+
+                let emoji = '🔬';
+                if (groupName.includes('Arts') || groupName.includes('B Unit')) emoji = '🏛️';
+                if (groupName.includes('Commerce') || groupName.includes('C Unit')) emoji = '📊';
 
                 groupCard.innerHTML = `
                     <div class="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-premium-neonIndigo flex items-center justify-center text-xl flex-shrink-0 group-hover:scale-110 transition-transform">${emoji}</div>
@@ -2198,78 +2216,87 @@ allSystemSubjects.forEach(sub => {
 
                 groupCard.onmouseenter = () => playUIAudio('hover');
                 groupCard.onclick = () => selectGroup(groupName, groupCard);
+
                 groupInner.appendChild(groupCard);
             });
 
-            // Reveal Container Smoothly
-            const groupContainer = document.getElementById('groupGridContainer');
-            groupContainer.classList.remove('hidden');
+            document.getElementById('groupGridContainer').classList.remove('hidden');
             document.getElementById('subjectGridContainer').classList.add('hidden');
             document.getElementById('chapterGridContainer').classList.add('hidden');
 
             setTimeout(() => {
-                groupContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                document.getElementById('groupGridContainer')
+                    .scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             }, 100);
         }
 
+
         function selectGroup(groupName, element) {
+            if (!appState.exam) return;
+
             appState.group = groupName;
             appState.subject = '';
 
             playUIAudio('click');
 
-            element.classList.add('animate_flash');
-            setTimeout(() => {
-                element.classList.remove('animate_flash');
-            }, 350);
-
             document.querySelectorAll('#groups-inner-grid .premium-card').forEach(card => {
-                card.classList.remove('border-indigo-600', 'ring-2', 'ring-indigo-100', 'dark:ring-indigo-900/30');
+                card.classList.remove(
+                    'border-indigo-600',
+                    'ring-2',
+                    'ring-indigo-100',
+                    'dark:ring-indigo-900/30'
+                );
             });
-            element.classList.add('border-indigo-600', 'ring-2', 'ring-indigo-100', 'dark:ring-indigo-900/30');
 
-            // Progress Indicator Update
-            const badge2 = document.getElementById('step-badge-2');
-            badge2.innerHTML = '<i class="fa-solid fa-check"></i>';
-            badge2.className = "w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs";
-            badge2.classList.remove('pulse-indicator');
+            if (element) {
+                element.classList.add(
+                    'border-indigo-600',
+                    'ring-2',
+                    'ring-indigo-100',
+                    'dark:ring-indigo-900/30',
+                    'animate_flash'
+                );
+
+                setTimeout(() => element.classList.remove('animate_flash'), 350);
+            }
+
+            document.getElementById('step-badge-2').innerHTML =
+                '<i class="fa-solid fa-check"></i>';
+
+            document.getElementById('step-badge-2').className =
+                'w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs';
+
             document.getElementById('step-line-3').style.opacity = '1';
             document.getElementById('step-badge-3').classList.add('pulse-indicator');
 
-            // Select matching DB structures with precise Exam and Group separation
-            let dbGroupKey = "";
-            if (appState.exam === "SSC") {
-                if (groupName.includes("Science")) dbGroupKey = "SSC_Science";
-                else if (groupName.includes("Arts")) dbGroupKey = "SSC_Arts";
-                else if (groupName.includes("Commerce")) dbGroupKey = "SSC_Commerce";
-            } else if (appState.exam === "HSC") {
-                if (groupName.includes("Science")) dbGroupKey = "HSC_Science";
-                else if (groupName.includes("Arts")) dbGroupKey = "HSC_Arts";
-                else if (groupName.includes("Commerce")) dbGroupKey = "HSC_Commerce";
-            } else {
-                // Admission unit checking
-                if (groupName.includes("A Unit")) dbGroupKey = "Adm_A";
-                else if (groupName.includes("B Unit")) dbGroupKey = "Adm_B";
-                else if (groupName.includes("C Unit")) dbGroupKey = "Adm_C";
-            }
+            // Dynamic key: SSC_Science / HSC_Science / SSC_Arts / HSC_Arts etc.
+            const dbGroupKey =
+                getDynamicGroupKey(appState.exam, groupName);
 
-            const matchedSubjects = educationDatabase.subjects[dbGroupKey] || [];
-            document.getElementById('subject-count-badge').innerText = `${matchedSubjects.length} টি বিষয় উপলব্ধ`;
+            const matchedSubjects =
+                educationDatabase.subjects[dbGroupKey] || [];
 
-            const subjectsInner = document.getElementById('subjects-inner-grid');
+            document.getElementById('subject-count-badge').innerText =
+                `${matchedSubjects.length} টি বিষয় উপলব্ধ`;
+
+            const subjectsInner =
+                document.getElementById('subjects-inner-grid');
+
             subjectsInner.innerHTML = '';
 
             matchedSubjects.forEach(subject => {
                 const subCard = document.createElement('div');
-                subCard.className = "premium-card p-5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800/80 hover:border-indigo-500 cursor-pointer text-center transition-all duration-300 transform hover:-translate-y-0.5 group";
-                
-                // Add specific color tags based on 1st / 2nd paper for visual premium look
-                let badgeHTML = "";
-                if (subject.includes("১ম পত্র")) {
+
+                subCard.className =
+                    'premium-card p-5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800/80 hover:border-indigo-500 cursor-pointer text-center transition-all duration-300 transform hover:-translate-y-0.5 group';
+
+                let badgeHTML = '';
+
+                if (subject.includes('১ম পত্র')) {
                     badgeHTML = `<span class="inline-block mt-1 px-2 py-0.5 text-[9px] font-bold rounded-md bg-blue-500/10 text-blue-500 dark:text-blue-300">১ম পত্র</span>`;
-                } else if (subject.includes("২য় পত্র")) {
-                    badgeHTML = `<span class="inline-block mt-1 px-2 py-0.5 text-[9px] font-bold rounded-md bg-emerald-500/10 text-emerald-500 dark:text-emerald-300">২য় পত্র</span>`;
-                } else if (subject.includes("ICT")) {
+                } else if (subject.includes('২য় পত্র') || subject.includes('২য় পত্র')) {
+                    badgeHTML = `<span class="inline-block mt-1 px-2 py-0.5 text-[9px] font-bold rounded-md bg-emerald-500/10 text-emerald-500 dark:text-emerald-300">২য় পত্র</span>`;
+                } else if (subject.includes('ICT') || subject === 'গণিত') {
                     badgeHTML = `<span class="inline-block mt-1 px-2 py-0.5 text-[9px] font-bold rounded-md bg-pink-500/10 text-pink-500 dark:text-pink-300">আবশ্যিক</span>`;
                 } else {
                     badgeHTML = `<span class="inline-block mt-1 px-2 py-0.5 text-[9px] font-bold rounded-md bg-indigo-500/10 text-indigo-500">জেনারেল</span>`;
@@ -2279,90 +2306,117 @@ allSystemSubjects.forEach(sub => {
                     <span class="font-extrabold text-slate-800 dark:text-slate-200 text-sm group-hover:text-indigo-600 dark:group-hover:text-premium-neonIndigo transition-colors block leading-tight">${subject}</span>
                     <div class="flex items-center justify-center gap-1.5 mt-1.5">
                         ${badgeHTML}
-                        <span class="text-[10px] text-slate-400 flex items-center gap-0.5"><i class="fa-solid fa-file-pdf"></i> PDF</span>
+                        <span class="text-[10px] text-slate-400 flex items-center gap-0.5">
+                            <i class="fa-solid fa-file-pdf"></i> PDF
+                        </span>
                     </div>
                 `;
 
                 subCard.onmouseenter = () => playUIAudio('hover');
                 subCard.onclick = () => selectSubject(subject, subCard);
+
                 subjectsInner.appendChild(subCard);
             });
 
-            const subjectContainer = document.getElementById('subjectGridContainer');
-            subjectContainer.classList.remove('hidden');
+            document.getElementById('subjectGridContainer').classList.remove('hidden');
             document.getElementById('chapterGridContainer').classList.add('hidden');
 
             setTimeout(() => {
-                subjectContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                document.getElementById('subjectGridContainer')
+                    .scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             }, 100);
         }
 
+
         function selectSubject(subjectName, element) {
+            if (!appState.exam || !appState.group) return;
+
             appState.subject = subjectName;
 
             playUIAudio('click');
 
-            element.classList.add('animate_flash');
-            setTimeout(() => {
-                element.classList.remove('animate_flash');
-            }, 350);
-
             document.querySelectorAll('#subjects-inner-grid .premium-card').forEach(card => {
-                card.classList.remove('border-indigo-600', 'bg-indigo-50/20', 'dark:bg-indigo-950/20');
+                card.classList.remove(
+                    'border-indigo-600',
+                    'bg-indigo-50/20',
+                    'dark:bg-indigo-950/20'
+                );
             });
-            element.classList.add('border-indigo-600', 'bg-indigo-50/20', 'dark:bg-indigo-950/20');
 
-            // Progress Step 3
-            const badge3 = document.getElementById('step-badge-3');
-            badge3.innerHTML = '<i class="fa-solid fa-check"></i>';
-            badge3.className = "w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs";
-            badge3.classList.remove('pulse-indicator');
+            if (element) {
+                element.classList.add(
+                    'border-indigo-600',
+                    'bg-indigo-50/20',
+                    'dark:bg-indigo-950/20',
+                    'animate_flash'
+                );
+
+                setTimeout(() => element.classList.remove('animate_flash'), 350);
+            }
+
+            document.getElementById('step-badge-3').innerHTML =
+                '<i class="fa-solid fa-check"></i>';
+
+            document.getElementById('step-badge-3').className =
+                'w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs';
+
             document.getElementById('step-line-4').style.opacity = '1';
             document.getElementById('step-badge-4').classList.add('pulse-indicator');
 
-            // Render chapter list
-            document.getElementById('selected-chapter-title').innerText = `৪. ${subjectName} এর উপলব্ধ সমাধান চ্যাপ্টারসমূহ`;
-            const chaptersInner = document.getElementById('chapters-inner-grid');
+            document.getElementById('selected-chapter-title').innerText =
+                `৪. ${subjectName} এর উপলব্ধ সমাধান চ্যাপ্টারসমূহ`;
+
+            const chaptersInner =
+                document.getElementById('chapters-inner-grid');
+
             chaptersInner.innerHTML = '';
 
-            const fileList = educationDatabase.chapters[subjectName] || [];
-            if(fileList.length === 0) {
-                chaptersInner.innerHTML = `
-                    <div class="col-span-full py-12 text-center text-slate-400 dark:text-slate-500">
-                        <i class="fa-regular fa-folder-open text-4xl mb-2 block"></i>
-                        দুঃখিত! এই বিষয়ের জন্য এখনো সমাধান ফাইল যুক্ত হয়নি। আমরা শীঘ্রই এটি যুক্ত করব।
-                    </div>
-                `;
-            } else {
-                fileList.forEach(fileObj => {
-                    const fileCard = document.createElement('div');
-                    fileCard.className = "flex flex-col sm:flex-row sm:items-center justify-between p-5 bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800/80 rounded-2xl hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-300 gap-4 group cursor-pointer";
-                    fileCard.innerHTML = `
-                        <div class="flex items-start gap-3.5">
-                            <div class="w-12 h-12 bg-red-50 dark:bg-red-950/50 text-red-500 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
-                                <i class="fa-solid fa-file-pdf"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-extrabold text-slate-800 dark:text-slate-200 text-sm sm:text-base leading-snug group-hover:text-emerald-600 dark:group-hover:text-premium-neonEmerald transition-colors">${fileObj.name}</h5>
-                                <span class="text-[10px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-wider block mt-1">ফাইল সাইজ: ${fileObj.size} | PDF Solution Book</span>
-                            </div>
+            // EXAM-SPECIFIC LOOKUP — this prevents SSC/HSC mixing.
+            const fileList =
+                getSubjectPDFs(appState.exam, subjectName);
+
+            fileList.forEach(fileObj => {
+                const fileCard = document.createElement('div');
+
+                fileCard.className =
+                    'flex flex-col sm:flex-row sm:items-center justify-between p-5 bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800/80 rounded-2xl hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-300 gap-4 group cursor-pointer';
+
+                fileCard.innerHTML = `
+                    <div class="flex items-start gap-3.5">
+                        <div class="w-12 h-12 bg-red-50 dark:bg-red-950/50 text-red-500 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-file-pdf"></i>
                         </div>
-                        <button class="bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-600 dark:hover:bg-indigo-500 text-white text-xs sm:text-sm font-bold px-5 py-3 rounded-xl flex items-center justify-center gap-1.5 flex-shrink-0 shadow-md active:scale-95">
-                            <i class="fa-solid fa-eye"></i> ভিউ করুন
-                        </button>
-                    `;
+                        <div>
+                            <h5 class="font-extrabold text-slate-800 dark:text-slate-200 text-sm sm:text-base leading-snug group-hover:text-emerald-600 dark:group-hover:text-premium-neonEmerald transition-colors">
+                                ${fileObj.name}
+                            </h5>
+                            <span class="text-[10px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-wider block mt-1">
+                                ফাইল সাইজ: ${fileObj.size || 'N/A'} | ${appState.exam} PDF Solution
+                            </span>
+                        </div>
+                    </div>
+                    <button class="bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-600 dark:hover:bg-indigo-500 text-white text-xs sm:text-sm font-bold px-5 py-3 rounded-xl flex items-center justify-center gap-1.5 flex-shrink-0 shadow-md active:scale-95">
+                        <i class="fa-solid fa-eye"></i> ভিউ করুন
+                    </button>
+                `;
 
-                    fileCard.onmouseenter = () => playUIAudio('hover');
-                    fileCard.onclick = () => openPdfModal(fileObj.name, fileObj.size, fileObj.link);
-                    chaptersInner.appendChild(fileCard);
-                });
-            }
+                fileCard.onmouseenter = () => playUIAudio('hover');
 
-            const chapterContainer = document.getElementById('chapterGridContainer');
-            chapterContainer.classList.remove('hidden');
+                fileCard.onclick = () =>
+                    openPdfModal(
+                        fileObj.name,
+                        fileObj.size || 'N/A',
+                        fileObj.link || DEFAULT_FALLBACK_PDF.link
+                    );
+
+                chaptersInner.appendChild(fileCard);
+            });
+
+            document.getElementById('chapterGridContainer').classList.remove('hidden');
 
             setTimeout(() => {
-                chapterContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                document.getElementById('chapterGridContainer')
+                    .scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             }, 100);
         }
 
@@ -2608,6 +2662,7 @@ allSystemSubjects.forEach(sub => {
         }
 
         function resetToHome() {
+            appState.exam = ''; appState.group = ''; appState.subject = '';
             playUIAudio('click');
             window.scrollTo({ top: 0, behavior: 'smooth' });
             
@@ -2644,5 +2699,3 @@ allSystemSubjects.forEach(sub => {
     </script>
 </body>
 </html>
-
-
