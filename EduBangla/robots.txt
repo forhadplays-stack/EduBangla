@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://edubanglaa.netlify.app/sitemap.xml
