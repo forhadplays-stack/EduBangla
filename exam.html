@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>EduBangla Exam — অনলাইন MCQ পরীক্ষা</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{bengali:['Hind Siliguri','sans-serif'],english:['Poppins','sans-serif']}}}};
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;width:100%;max-width:100%;overflow-x:hidden}body{font-family:'Hind Siliguri','Poppins',sans-serif;touch-action:manipulation;background:#f8fafc}.option{transition:.2s}.option:hover{transform:translateY(-1px);border-color:#6366f1}.option.selected{background:#ef4444!important;border-color:#dc2626!important;color:#fff!important;box-shadow:0 8px 22px rgba(239,68,68,.22)}.option.selected .letter{background:#fff;color:#dc2626}.question-card{scroll-margin-top:90px}.subject-btn.active{background:#4f46e5;color:#fff;border-color:#4f46e5}.hidden{display:none!important}.result-correct{border-color:#10b981!important;background:#ecfdf5!important}.result-wrong{border-color:#ef4444!important;background:#fef2f2!important}@media(max-width:640px){.option{padding:12px}.question-card{padding:16px}}
+.dark body{background:#0b0f19}
+</style>
+</head>
+<body class="text-slate-800 dark:text-slate-100 min-h-screen">
+<header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-950/90 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
+    <a href="index.html" class="flex items-center gap-2 font-black text-xl text-slate-900 dark:text-white"><span class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 text-white flex items-center justify-center">EB</span><span>Edu<span class="text-indigo-600">Bangla</span> <span class="text-slate-400">Exam</span></span></a>
+    <div class="flex items-center gap-2">
+      <button onclick="toggleTheme()" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center"><i id="themeIcon" class="fa-solid fa-moon"></i></button>
+      <a href="index.html" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 font-bold text-sm"><i class="fa-solid fa-house"></i> মূল পেজ</a>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-4 py-7 sm:py-10">
+  <section id="selectionPage">
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-300 text-sm font-bold"><i class="fa-solid fa-pen-to-square"></i> অনলাইন পরীক্ষা</div>
+      <h1 class="text-3xl sm:text-5xl font-black mt-4 text-slate-900 dark:text-white">EduBangla Exam</h1>
+      <p class="text-slate-500 dark:text-slate-400 mt-2">আপনার পরীক্ষা, বিভাগ ও বিষয় নির্বাচন করে MCQ পরীক্ষা শুরু করুন।</p>
+    </div>
+
+    <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm p-5 sm:p-8 space-y-7">
+      <div>
+        <div class="flex items-center gap-3 mb-4"><span class="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-indigo-950 text-indigo-600 flex items-center justify-center font-bold">১</span><h2 class="text-xl font-extrabold">পরীক্ষা নির্বাচন করুন</h2></div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4" id="examGrid"></div>
+      </div>
+      <div id="groupWrap" class="hidden">
+        <div class="border-t border-slate-200 dark:border-slate-800 pt-7">
+          <div class="flex items-center gap-3 mb-4"><span class="w-9 h-9 rounded-xl bg-violet-100 dark:bg-violet-950 text-violet-600 flex items-center justify-center font-bold">২</span><h2 class="text-xl font-extrabold" id="groupTitle">বিভাগ নির্বাচন করুন</h2></div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4" id="groupGrid"></div>
+        </div>
+      </div>
+      <div id="subjectWrap" class="hidden">
+        <div class="border-t border-slate-200 dark:border-slate-800 pt-7">
+          <div class="flex items-center gap-3 mb-4"><span class="w-9 h-9 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 flex items-center justify-center font-bold">৩</span><h2 class="text-xl font-extrabold">বিষয় নির্বাচন করুন</h2></div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="subjectGrid"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="examPage" class="hidden">
+    <div class="bg-gradient-to-r from-indigo-700 to-violet-700 text-white rounded-3xl p-5 sm:p-7 shadow-xl mb-6">
+      <div class="flex flex-col sm:flex-row justify-between gap-5 items-start sm:items-center">
+        <div><div class="text-indigo-200 text-sm font-semibold" id="examMeta"></div><h1 class="text-2xl sm:text-4xl font-black mt-1" id="examTitle">EduBangla Exam</h1><p class="text-indigo-100 text-sm mt-2">প্রতিটি প্রশ্নের একটি করে উত্তর নির্বাচন করুন। নির্বাচিত উত্তর লাল রঙে দেখা যাবে।</p></div>
+        <div class="bg-white/15 rounded-2xl px-5 py-3 text-center min-w-[130px]"><div class="text-xs text-indigo-100">সময়</div><div id="timer" class="text-2xl font-black">২০:০০</div></div>
+      </div>
+    </div>
+
+    <div class="sticky top-16 z-40 bg-white/95 dark:bg-slate-950/95 backdrop-blur border border-slate-200 dark:border-slate-800 rounded-2xl p-3 mb-5 shadow-sm">
+      <div class="flex items-center justify-between gap-3 text-sm font-bold"><span id="progressText">০/৩০ উত্তর দেওয়া হয়েছে</span><span id="answeredBadge" class="text-indigo-600 dark:text-indigo-300">৩০টি MCQ</span></div>
+      <div class="h-2 bg-slate-100 dark:bg-slate-800 rounded-full mt-2 overflow-hidden"><div id="progressBar" class="h-full bg-indigo-600 rounded-full transition-all" style="width:0%"></div></div>
+    </div>
+
+    <div id="questionsContainer" class="space-y-4"></div>
+    <div class="mt-7 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-5 sm:p-7 text-center">
+      <p id="unansweredText" class="text-slate-500 dark:text-slate-400 text-sm mb-4">সব প্রশ্নের উত্তর দেওয়ার পর পরীক্ষা জমা দিন।</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-3"><button onclick="confirmSubmit()" class="inline-flex justify-center items-center gap-2 px-8 py-4 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold shadow-lg"><i class="fa-solid fa-paper-plane"></i> পরীক্ষা জমা দিন</button><button onclick="backToSelection()" class="inline-flex justify-center items-center gap-2 px-6 py-4 rounded-2xl bg-slate-100 dark:bg-slate-800 font-bold"><i class="fa-solid fa-arrow-left"></i> বিষয় পরিবর্তন</button></div>
+    </div>
+  </section>
+
+  <section id="resultPage" class="hidden">
+    <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm p-6 sm:p-10 text-center">
+      <div class="w-20 h-20 mx-auto rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-600 flex items-center justify-center text-4xl"><i class="fa-solid fa-trophy"></i></div>
+      <h1 class="text-3xl sm:text-4xl font-black mt-5">পরীক্ষা সম্পন্ন!</h1>
+      <p id="resultSubject" class="text-slate-500 mt-2"></p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto mt-7">
+        <div class="p-4 rounded-2xl bg-indigo-50 dark:bg-indigo-950/40"><div class="text-xs text-slate-500">মোট</div><b id="resultTotal" class="text-2xl">৩০</b></div>
+        <div class="p-4 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40"><div class="text-xs text-slate-500">সঠিক</div><b id="resultCorrect" class="text-2xl text-emerald-600">০</b></div>
+        <div class="p-4 rounded-2xl bg-red-50 dark:bg-red-950/40"><div class="text-xs text-slate-500">ভুল</div><b id="resultWrong" class="text-2xl text-red-600">০</b></div>
+        <div class="p-4 rounded-2xl bg-violet-50 dark:bg-violet-950/40"><div class="text-xs text-slate-500">স্কোর</div><b id="resultPercent" class="text-2xl text-violet-600">০%</b></div>
+      </div>
+      <div class="mt-7 flex flex-col sm:flex-row justify-center gap-3"><button onclick="reviewAnswers()" class="px-7 py-3.5 rounded-2xl bg-indigo-600 text-white font-bold"><i class="fa-solid fa-list-check"></i> উত্তর দেখুন</button><button onclick="backToSelection()" class="px-7 py-3.5 rounded-2xl bg-slate-100 dark:bg-slate-800 font-bold"><i class="fa-solid fa-rotate"></i> আবার পরীক্ষা দিন</button></div>
+    </div>
+    <div id="reviewContainer" class="hidden mt-5 space-y-3"></div>
+  </section>
+</main>
+
+<script>
+const bn=['ক','খ','গ','ঘ'];
+const subjects=['বাংলা','ইংরেজি','ICT'];
+const exams={
+ SSC:[['Science (বিজ্ঞান)','🔬'],['Commerce (ব্যবসায় শিক্ষা)','📊'],['Arts (মানবিক)','🏛️']],
+ HSC:[['Science (বিজ্ঞান)','🔬'],['Commerce (ব্যবসায় শিক্ষা)','📊'],['Arts (মানবিক)','🏛️']],
+ Admission:[['A Unit (বিজ্ঞান ক)','🧪'],['B Unit (মানবিক খ)','📚'],['C Unit (ব্যবসায় শিক্ষা গ)','📈']]
+};
+const icon={বাংলা:'fa-language',ইংরেজি:'fa-font',ICT:'fa-laptop-code'};
+let selectedExam='',selectedGroup='',selectedSubject='',questions=[],answers={},submitted=false,timerSeconds=1200,timerHandle=null;
+
+const questionBank={
+SSC:{
+বাংলা:[
+['বাংলা ভাষার মূল উপাদান কোনটি?',['ধ্বনি','বর্ণ','শব্দ','বাক্য'],0],
+['‘সোনার বাংলা’ শব্দবন্ধে ‘সোনার’ কোন পদ?',['বিশেষ্য','বিশেষণ','সর্বনাম','ক্রিয়া'],1],
+['‘আমি’ কোন পুরুষ?',['উত্তম পুরুষ','মধ্যম পুরুষ','নাম পুরুষ','অনির্দিষ্ট পুরুষ'],0],
+['‘অরণ্যে রোদন’ বাগধারার অর্থ কী?',['বনে ভ্রমণ','নিষ্ফল আবেদন','বিপদে পড়া','আনন্দ করা'],1],
+['‘আকাশ-কুসুম’ অর্থ কী?',['সুন্দর ফুল','অসম্ভব কল্পনা','আকাশের তারা','দুর্লভ ফল'],1],
+['‘বিদ্রোহী’ কবিতার কবি কে?',['রবীন্দ্রনাথ ঠাকুর','জীবনানন্দ দাশ','কাজী নজরুল ইসলাম','জসীমউদ্দীন'],2],
+['‘সোনার তরী’ কাব্যের রচয়িতা কে?',['রবীন্দ্রনাথ ঠাকুর','মাইকেল মধুসূদন দত্ত','সুকান্ত ভট্টাচার্য','শামসুর রাহমান'],0],
+['‘অপরিচিতা’ গল্পের লেখক কে?',['শরৎচন্দ্র চট্টোপাধ্যায়','রবীন্দ্রনাথ ঠাকুর','বঙ্কিমচন্দ্র চট্টোপাধ্যায়','মানিক বন্দ্যোপাধ্যায়'],1],
+['‘নবাব সিরাজউদ্দৌলা’ নাটকের রচয়িতা কে?',['সিকান্দার আবু জাফর','মুনীর চৌধুরী','দ্বিজেন্দ্রলাল রায়','সৈয়দ শামসুল হক'],0],
+['‘লালসালু’ উপন্যাসের লেখক কে?',['সৈয়দ ওয়ালীউল্লাহ','আখতারুজ্জামান ইলিয়াস','হুমায়ূন আহমেদ','শওকত ওসমান'],0],
+['যে বাক্যে একটি মাত্র সমাপিকা ক্রিয়া থাকে তাকে কী বলে?',['যৌগিক বাক্য','জটিল বাক্য','সরল বাক্য','মিশ্র বাক্য'],2],
+['‘অতি লোভে তাঁতি নষ্ট’ কী?',['প্রবাদ','উপমা','রূপক','সমাস'],0],
+['‘নীল আকাশ’ কোন সমাসের উদাহরণ?',['দ্বন্দ্ব','কর্মধারয়','বহুব্রীহি','অব্যয়ীভাব'],1],
+['‘রাজপুত্র’ কোন সমাস?',['দ্বিগু','তৎপুরুষ','দ্বন্দ্ব','বহুব্রীহি'],1],
+['‘যিনি অন্যের উপকার করেন’—এক কথায় কী?',['পরোপকারী','স্বার্থপর','দয়ালু','অতিথিপরায়ণ'],0],
+['‘যে দেশকে ভালোবাসে’—এক কথায় কী?',['দেশদ্রোহী','দেশপ্রেমিক','দেশচারী','দেশান্তরী'],1],
+['বাংলা বর্ণমালায় স্বরবর্ণ কতটি?',['৯টি','১০টি','১১টি','১২টি'],2],
+['‘কলম দিয়ে লিখি’ বাক্যে ‘কলম দিয়ে’ কোন কারক?',['কর্তৃকারক','কর্মকারক','করণকারক','অধিকরণকারক'],2],
+['‘বাড়িতে’ শব্দে কোন বিভক্তি আছে?',['এ','তে','কে','র'],1],
+['‘সে দ্রুত দৌড়ায়’ বাক্যে ‘দ্রুত’ কী?',['বিশেষ্য','বিশেষণ','ক্রিয়াবিশেষণ','সর্বনাম'],2],
+['‘তুমি কি যাবে?’ কোন ধরনের বাক্য?',['বিবৃতিমূলক','প্রশ্নবোধক','অনুজ্ঞাসূচক','বিস্ময়সূচক'],1],
+['‘বাহ! কী সুন্দর!’ কোন ধরনের বাক্য?',['প্রশ্নবোধক','বিস্ময়সূচক','আদেশসূচক','নেতিবাচক'],1],
+['‘সত্য’ শব্দের বিপরীত শব্দ কোনটি?',['ন্যায়','মিথ্যা','শুদ্ধ','সঠিক'],1],
+['‘অন্ধকার’ শব্দের বিপরীত কোনটি?',['কালো','আলো','রাত্রি','ছায়া'],1],
+['‘সূর্য’ শব্দের সমার্থক কোনটি?',['রবি','শশী','ধরা','নিশি'],0],
+['‘চাঁদ’ শব্দের সমার্থক কোনটি?',['রবি','শশী','অনল','পবন'],1],
+['‘মাথায় হাত দেওয়া’ বাগধারার অর্থ কী?',['আনন্দ করা','বিপদে পড়া','অনুতপ্ত হওয়া','ঘুমানো'],2],
+['‘হাত গুটিয়ে বসা’ অর্থ কী?',['কাজে ব্যস্ত থাকা','নিষ্ক্রিয় থাকা','দ্রুত কাজ করা','ভ্রমণ করা'],1],
+['‘আমরা খেলছি’ বাক্যে ক্রিয়াটি কোন কাল নির্দেশ করে?',['বর্তমান ঘটমান','অতীত','ভবিষ্যৎ','পুরাঘটিত অতীত'],0],
+['‘সে স্কুলে যাবে’ বাক্যে ‘স্কুলে’ কোন কারক?',['অধিকরণ','করণ','কর্তৃ','সম্প্রদান'],0]
+],
+ইংরেজি:[
+['Choose the correct article: ___ apple a day keeps the doctor away.',['A','An','The','No article'],1],
+['What is the plural of “child”?',['Childs','Childes','Children','Childrens'],2],
+['Choose the correct form: He ___ to school every day.',['go','goes','going','gone'],1],
+['What is the opposite of “honest”?',['Truthful','Sincere','Dishonest','Loyal'],2],
+['What is the synonym of “rapid”?',['Slow','Quick','Weak','Late'],1],
+['Which one is a noun?',['Beautiful','Beauty','Beautify','Beautifully'],1],
+['Choose the correct preposition: He is good ___ English.',['in','at','on','for'],1],
+['Past tense of “go” is—',['goed','gone','went','going'],2],
+['“I am reading” is which tense?',['Present Indefinite','Present Continuous','Past Continuous','Present Perfect'],1],
+['Choose the correct sentence.',['He do not know me.','He does not know me.','He does not knows me.','He not know me.'],1],
+['“Honesty is the best policy.” The word “Honesty” is a—',['Verb','Adjective','Noun','Adverb'],2],
+['Which is a pronoun?',['Book','Quickly','They','Beautiful'],2],
+['Which is an adjective?',['Beauty','Beautiful','Beautifully','Beautify'],1],
+['Which is an adverb?',['Slow','Slowness','Slowly','Slowed'],2],
+['“The sun rises in the east.” This is—',['Interrogative','Assertive','Imperative','Exclamatory'],1],
+['Choose the correct comparative form of “good”.',['Gooder','More good','Better','Best'],2],
+['Superlative form of “bad” is—',['Badder','Worse','Worst','Most bad'],2],
+['“Can” expresses—',['Ability','Past habit','Possession only','Time'],0],
+['Which one is a conjunction?',['And','Very','Under','Beautiful'],0],
+['Choose the correct spelling.',['Neccessary','Necessary','Necesary','Nessessary'],1],
+['“He has finished the work.” The tense is—',['Present Perfect','Past Perfect','Present Continuous','Future Perfect'],0],
+['Passive voice of “They play football.”',['Football played by them.','Football is played by them.','Football was played by them.','Football has played by them.'],1],
+['Indirect speech: He said, “I am ill.”',['He said that I am ill.','He said that he was ill.','He says that he was ill.','He said he is ill yesterday.'],1],
+['“What a beautiful flower!” is—',['Assertive','Imperative','Exclamatory','Interrogative'],2],
+['Which word means “begin”?',['End','Start','Stop','Close'],1],
+['Choose the correct tag: You are a student, ___?',['are you','aren’t you','isn’t you','don’t you'],1],
+['“Too much” means—',['Very little','More than necessary','Exactly enough','Nothing'],1],
+['Which is a modal verb?',['Have','Must','Do','Be'],1],
+['Choose the correct sentence.',['She can sings.','She can sing.','She can singing.','She can to sing.'],1],
+['“Since” is commonly used with a—',['Point of time','Period only','Person only','Place only'],0]
+],
+ICT:[
+['কম্পিউটারের মস্তিষ্ক বলা হয় কোনটিকে?',['RAM','CPU','Hard Disk','Monitor'],1],
+['CPU-এর পূর্ণরূপ কী?',['Central Processing Unit','Computer Primary Unit','Central Program Utility','Control Processing User'],0],
+['RAM কী ধরনের মেমোরি?',['স্থায়ী','অস্থায়ী','শুধু-পঠন','বহিঃস্থ'],1],
+['HTML-এর পূর্ণরূপ কী?',['Hyper Text Markup Language','High Text Machine Language','Hyperlink Text Management Language','Home Tool Markup Language'],0],
+['CSS মূলত কী কাজে ব্যবহৃত হয়?',['ডেটাবেস তৈরি','ওয়েবপেজের ডিজাইন/স্টাইল','ভিডিও সম্পাদনা','অ্যান্টিভাইরাস'],1],
+['JavaScript সাধারণত কী কাজে ব্যবহৃত হয়?',['ওয়েবপেজে ইন্টার‌্যাকশন','শুধু ছবি আঁকা','শুধু ডেটা সংরক্ষণ','প্রিন্টিং'],0],
+['IP-এর পূর্ণরূপ কী?',['Internet Protocol','Internal Program','Internet Process','Input Protocol'],0],
+['WWW-এর পূর্ণরূপ কী?',['World Wide Web','World Web Window','Wide World Wire','Web World Wide'],0],
+['URL-এর পূর্ণরূপ কী?',['Uniform Resource Locator','Universal Record Link','Uniform Router Language','User Resource Line'],0],
+['ই-মেইল পাঠাতে কোনটি প্রয়োজন?',['ইন্টারনেট সংযোগ','শুধু প্রিন্টার','শুধু স্ক্যানার','কেবল ক্যালকুলেটর'],0],
+['১ Byte সমান কত Bit?',['৪','৮','১৬','৩২'],1],
+['Binary number system-এর ভিত্তি কত?',['২','৮','১০','১৬'],0],
+['Decimal number system-এর ভিত্তি কত?',['২','৮','১০','১৬'],2],
+['Hexadecimal system-এর ভিত্তি কত?',['২','৮','১০','১৬'],3],
+['LAN-এর পূর্ণরূপ কী?',['Local Area Network','Large Area Network','Long Access Network','Local Access Node'],0],
+['WAN-এর পূর্ণরূপ কী?',['Wide Area Network','Web Area Node','Wireless Access Network','World Access Number'],0],
+['Router-এর প্রধান কাজ কী?',['নেটওয়ার্কের মধ্যে ডেটা রাউট করা','শুধু ছবি দেখানো','শুধু শব্দ রেকর্ড','বিদ্যুৎ তৈরি'],0],
+['Phishing কী?',['ডেটা চুরি করার প্রতারণামূলক কৌশল','এক ধরনের প্রিন্টার','ফাইল কমপ্রেশন','অপারেটিং সিস্টেম'],0],
+['Antivirus-এর কাজ কী?',['ম্যালওয়্যার শনাক্ত/প্রতিরোধ করা','ইন্টারনেটের গতি বাড়ানো','মনিটর বড় করা','কীবোর্ড মেরামত'],0],
+['Database কী?',['সুশৃঙ্খলভাবে সংরক্ষিত তথ্যের সংগ্রহ','শুধু ছবি','শুধু ভিডিও','একটি কীবোর্ড'],0],
+['SQL সাধারণত কী কাজে ব্যবহৃত হয়?',['ডেটাবেসের সঙ্গে কাজ করতে','ভিডিও চালাতে','গ্রাফিক্স আঁকতে','অডিও রেকর্ড করতে'],0],
+['Cloud computing বলতে কী বোঝায়?',['ইন্টারনেটভিত্তিক কম্পিউটিং সেবা','শুধু আবহাওয়া দেখা','কেবল অফলাইন গেম','প্রিন্টারের কাজ'],0],
+['Two-factor authentication কী বাড়ায়?',['নিরাপত্তা','স্ক্রিনের আকার','ইন্টারনেটের তার','ব্যাটারির ভোল্টেজ'],0],
+['PDF-এর পূর্ণরূপ কী?',['Portable Document Format','Public Data File','Personal Document Form','Print Data Format'],0],
+['OCR প্রযুক্তি কী করতে পারে?',['ছবির লেখা শনাক্ত করে টেক্সটে রূপান্তর','শুধু গান বাজায়','শুধু ভিডিও কাটে','নেটওয়ার্ক বন্ধ করে'],0],
+['Bluetooth কী ধরনের প্রযুক্তি?',['স্বল্প দূরত্বের বেতার যোগাযোগ','উপগ্রহ যোগাযোগ','তারযুক্ত LAN','ফাইবার অপটিক কেবল'],0],
+['USB-এর পূর্ণরূপ কী?',['Universal Serial Bus','United System Board','Universal Storage Block','User Serial Base'],0],
+['Operating System-এর উদাহরণ কোনটি?',['Windows','HTML','HTTP','USB'],0],
+['Search engine-এর উদাহরণ কোনটি?',['Google','Windows','Bluetooth','Excel'],0],
+['Artificial Intelligence-এর সংক্ষিপ্ত রূপ কী?',['AR','AI','IT','AL'],1]
+]},
+HSC:{
+বাংলা:[
+['‘অগ্নিবীণা’ কাব্যের রচয়িতা কে?',['কাজী নজরুল ইসলাম','রবীন্দ্রনাথ ঠাকুর','জীবনানন্দ দাশ','সুকান্ত ভট্টাচার্য'],0],
+['‘বনলতা সেন’ কবিতার কবি কে?',['জীবনানন্দ দাশ','কাজী নজরুল ইসলাম','জসীমউদ্দীন','শামসুর রাহমান'],0],
+['‘কবর’ কবিতার রচয়িতা কে?',['জসীমউদ্দীন','সুকান্ত ভট্টাচার্য','আল মাহমুদ','নির্মলেন্দু গুণ'],0],
+['‘পথের পাঁচালী’ উপন্যাসের লেখক কে?',['বিভূতিভূষণ বন্দ্যোপাধ্যায়','শরৎচন্দ্র চট্টোপাধ্যায়','মানিক বন্দ্যোপাধ্যায়','তারাশঙ্কর বন্দ্যোপাধ্যায়'],0],
+['‘পদ্মা নদীর মাঝি’ উপন্যাসের লেখক কে?',['মানিক বন্দ্যোপাধ্যায়','বিভূতিভূষণ বন্দ্যোপাধ্যায়','তারাশঙ্কর বন্দ্যোপাধ্যায়','শওকত ওসমান'],0],
+['‘রেইনকোট’ গল্পের লেখক কে?',['আখতারুজ্জামান ইলিয়াস','হুমায়ূন আহমেদ','শওকত ওসমান','সেলিনা হোসেন'],0],
+['‘নেকড়ে অরণ্য’ কোন ধরনের রচনা?',['গল্প','কবিতা','নাটক','প্রবন্ধ'],0],
+['‘আমার ভাইয়ের রক্তে রাঙানো’ গানের রচয়িতা কে?',['আবদুল গাফফার চৌধুরী','আলতাফ মাহমুদ','গাজী মাজহারুল আনোয়ার','সিকান্দার আবু জাফর'],0],
+['‘স্বাধীনতা, এই শব্দটি কীভাবে আমাদের হলো’ কবিতার কবি কে?',['নির্মলেন্দু গুণ','শামসুর রাহমান','সুকান্ত ভট্টাচার্য','আল মাহমুদ'],0],
+['‘সেই অস্ত্র’ কোন মুক্তিযুদ্ধভিত্তিক রচনার সঙ্গে সম্পর্কিত?',['প্রবন্ধ','বিজ্ঞান কল্পকাহিনি','রূপকথা','ভ্রমণকাহিনি'],0],
+['‘বাক্য’ কী প্রকাশ করে?',['সম্পূর্ণ ভাব','শুধু শব্দ','শুধু ধ্বনি','শুধু বর্ণ'],0],
+['‘যে পরিশ্রম করে সে সফল হয়’ বাক্যটি কোন ধরনের?',['জটিল','সরল','যৌগিক','অসম্পূর্ণ'],0],
+['‘রহিম ও করিম স্কুলে গেল’—এখানে ‘ও’ কী?',['সংযোজক অব্যয়','অনুসর্গ','নিপাত','বিশেষণ'],0],
+['‘মা-বাবা’ কোন সমাসের উদাহরণ?',['দ্বন্দ্ব','কর্মধারয়','তৎপুরুষ','বহুব্রীহি'],0],
+['‘দশানন’ কোন সমাস?',['বহুব্রীহি','দ্বিগু','দ্বন্দ্ব','অব্যয়ীভাব'],0],
+['‘ত্রিভুজ’ কোন সমাস?',['দ্বিগু','তৎপুরুষ','কর্মধারয়','দ্বন্দ্ব'],0],
+['‘রাজা’ শব্দের স্ত্রীবাচক রূপ কোনটি?',['রানী','রাজকন্যা','রাজবধূ','রাজমাতা'],0],
+['‘অমর’ শব্দের বিপরীত শব্দ কোনটি?',['মরণশীল','অক্ষয়','চিরস্থায়ী','অবিনশ্বর'],0],
+['‘নদী’ শব্দের সমার্থক কোনটি?',['তটিনী','পাহাড়','সাগর','মরু'],0],
+['‘অতি চালাকের গলায় দড়ি’—এটি কী?',['প্রবাদ','বাগধারা','সমাস','উপমা'],0],
+['‘চোখে ধুলো দেওয়া’ অর্থ কী?',['প্রতারণা করা','কান্না করা','ঘুমানো','ভয় পাওয়া'],0],
+['‘গাছে কাঁঠাল গোঁফে তেল’ অর্থ কী?',['আগেভাগে আনন্দ করা','বিপদে পড়া','অতিরিক্ত পরিশ্রম','গোপন রাখা'],0],
+['‘হাতের পাঁচ’ অর্থ কী?',['শেষ সম্বল','সহজ কাজ','বড় সম্পদ','অল্প সময়'],0],
+['‘কানে তুলা দেওয়া’ অর্থ কী?',['কথা না শোনা','গান শোনা','মনোযোগ দেওয়া','ডাক দেওয়া'],0],
+['‘আবশ্যক’ শব্দের শুদ্ধ বানান কোনটি?',['আবশ্যক','আবশক','আবশ‍্যক','আবশ্যক্'],0],
+['‘মুমূর্ষু’ শব্দের অর্থ কী?',['মৃত্যুপথযাত্রী','সুস্থ ব্যক্তি','অতিথি','বিজয়ী'],0],
+['‘স্বদেশ’ শব্দে ‘স্ব’ কী?',['উপসর্গ','প্রত্যয়','বিভক্তি','অনুসর্গ'],0],
+['‘লিখিত’ শব্দে ‘ইত’ কী?',['প্রত্যয়','উপসর্গ','বিভক্তি','সমাস'],0],
+['‘সে বই পড়ে এবং গান শোনে’—এটি কোন বাক্য?',['যৌগিক','সরল','জটিল','প্রশ্নবোধক'],0],
+['‘যদি তুমি আসো, তবে আমি যাব’—এটি কোন বাক্য?',['জটিল','সরল','যৌগিক','আদেশসূচক'],0]
+],
+ইংরেজি:[
+['Choose the correct synonym of “abundant”.',['Plentiful','Scarce','Tiny','Weak'],0],
+['Choose the antonym of “ancient”.',['Modern','Old','Historic','Former'],0],
+['Which one is a noun?',['Honesty','Honest','Honestly','Honestify'],0],
+['Choose the correct article: He is ___ honest man.',['an','a','the','no article'],0],
+['Choose the correct preposition: He is good ___ mathematics.',['at','in','on','for'],0],
+['What is the past participle of “write”?',['Written','Wrote','Writing','Writes'],0],
+['Choose the correct passive voice: People speak English worldwide.',['English is spoken worldwide.','English was spoken worldwide.','English speaks worldwide.','English has speak worldwide.'],0],
+['Choose the correct reported speech: He said, “I am busy.”',['He said that he was busy.','He said that I am busy.','He says that he was busy.','He said he is busy yesterday.'],0],
+['Which sentence is grammatically correct?',['She has gone to school.','She have gone to school.','She has went to school.','She going to school.'],0],
+['What is the plural of “criterion”?',['Criteria','Criterions','Criteriones','Criterias'],0],
+['What is the adjective form of “beauty”?',['Beautiful','Beautify','Beautifully','Beautician'],0],
+['What is the noun form of “decide”?',['Decision','Decisive','Deciding','Decided'],0],
+['Choose the correct conditional: If I were rich, I ___ a school.',['would build','will build','built','build'],0],
+['Choose the correct tag: Let us go, ___?',['shall we','will we','do we','are we'],0],
+['“He works hard” — hard is a/an ___.',['adverb','adjective','noun','pronoun'],0],
+['Choose the correct spelling.',['Necessary','Necesary','Neccessary','Necessery'],0],
+['Which is an interrogative sentence?',['Where do you live?','I live in Dhaka.','Live in Dhaka.','What a beautiful place!'],0],
+['Choose the correct degree: Mount Everest is ___ mountain in the world.',['the highest','higher','high','highest than'],0],
+['What does “look after” mean?',['Take care of','Search for','Look at','Avoid'],0],
+['Choose the correct infinitive: I want ___ English.',['to learn','learning','learned','learns'],0],
+['Which one is a complex sentence?',['Although he is poor, he is honest.','He is poor and honest.','He is poor.','Work hard.'],0],
+['Choose the correct conjunction: Work hard ___ you will fail.',['or','and','but','because'],0],
+['“A man of letters” means ___.',['a learned person','a postman','a businessman','a farmer'],0],
+['What is the synonym of “rapid”?',['Swift','Slow','Late','Weak'],0],
+['What is the antonym of “expand”?',['Contract','Increase','Enlarge','Extend'],0],
+['Choose the correct verb: Neither Rahim nor Karim ___ present.',['is','are','were','have'],0],
+['Choose the correct tense: She ___ here since morning.',['has been working','is working','worked','works'],0],
+['Which is a metaphor?',['Time is a thief.','He runs like a deer.','The sun is bright.','She sings well.'],0],
+['Choose the correct phrase: “In spite of” means ___.',['Despite','Because of','Instead of','In front of'],0],
+['The opposite of “optimistic” is ___.',['Pessimistic','Energetic','Realistic','Active'],0]
+],
+ICT:[
+['HTML-এর পূর্ণরূপ কী?',['HyperText Markup Language','HighText Machine Language','Hyperlink Text Management Language','Home Tool Markup Language'],0],
+['CSS-এর প্রধান কাজ কী?',['ওয়েবপেজের নকশা ও স্টাইল নির্ধারণ','ডেটাবেস তৈরি','ভিডিও সম্পাদনা','ই-মেইল পাঠানো'],0],
+['JavaScript মূলত কী কাজে ব্যবহৃত হয়?',['ওয়েবপেজে ইন্টারঅ্যাকটিভিটি তৈরি','প্রিন্টার চালানো','হার্ডডিস্ক ফরম্যাট','কেবল ছবি আঁকা'],0],
+['IPv6 ঠিকানায় কত বিট থাকে?',['১২৮','৩২','৬৪','২৫৬'],0],
+['DNS-এর কাজ কী?',['ডোমেইন নামকে IP ঠিকানায় রূপান্তর করা','ফাইল কমপ্রেস করা','ভিডিও চালানো','ভাইরাস মুছে ফেলা'],0],
+['SQL কী?',['ডেটাবেস ব্যবস্থাপনার ভাষা','অপারেটিং সিস্টেম','গ্রাফিক্স সফটওয়্যার','ওয়েব ব্রাউজার'],0],
+['DBMS-এর পূর্ণরূপ কী?',['Database Management System','Data Backup Management Service','Digital Base Machine System','Database Memory Storage'],0],
+['Primary Key-এর বৈশিষ্ট্য কী?',['প্রতিটি রেকর্ডকে স্বতন্ত্রভাবে শনাক্ত করে','সবসময় একই মান থাকে','শুধু টেক্সট রাখে','শুধু ছবি রাখে'],0],
+['Algorithm কী?',['সমস্যা সমাধানের ধাপে ধাপে পদ্ধতি','কম্পিউটারের যন্ত্রাংশ','এক ধরনের ভাইরাস','ইন্টারনেট সংযোগ'],0],
+['Flowchart-এ সিদ্ধান্ত বোঝাতে কোন চিহ্ন ব্যবহৃত হয়?',['Diamond','Rectangle','Oval','Arrow'],0],
+['Compiler কী করে?',['উচ্চস্তরের প্রোগ্রামকে মেশিন/টার্গেট কোডে অনুবাদ করে','শুধু ফাইল মুছে','ইন্টারনেট চালায়','ছবি স্ক্যান করে'],0],
+['RAM কী ধরনের মেমোরি?',['Volatile','Permanent','Optical','Magnetic tape only'],0],
+['ROM-এর বৈশিষ্ট্য কী?',['বিদ্যুৎ বন্ধ হলেও তথ্য সাধারণত থাকে','সবসময় পরিবর্তনশীল','শুধু অডিও রাখে','শুধু ইন্টারনেট চালায়'],0],
+['LAN-এর পূর্ণরূপ কী?',['Local Area Network','Large Access Network','Long Area Node','Local Analog Network'],0],
+['WAN কী?',['বৃহৎ ভৌগোলিক এলাকার নেটওয়ার্ক','একটি ইনপুট ডিভাইস','একটি প্রোগ্রামিং ভাষা','একটি ফাইল ফরম্যাট'],0],
+['Router-এর কাজ কী?',['বিভিন্ন নেটওয়ার্কের মধ্যে ডেটা প্যাকেট পরিচালনা করা','শুধু শব্দ রেকর্ড করা','কাগজ প্রিন্ট করা','বিদ্যুৎ তৈরি করা'],0],
+['Firewall কী?',['নেটওয়ার্ক নিরাপত্তা ব্যবস্থা','ভিডিও প্লেয়ার','টেক্সট এডিটর','স্টোরেজ ডিভাইস'],0],
+['Phishing কী?',['প্রতারণার মাধ্যমে গোপন তথ্য হাতিয়ে নেওয়ার চেষ্টা','ফাইল ব্যাকআপ','ডেটা কমপ্রেশন','ওয়েব ডিজাইন'],0],
+['Two-factor authentication-এর উদ্দেশ্য কী?',['অতিরিক্ত নিরাপত্তা স্তর যোগ করা','ইন্টারনেট দ্রুত করা','স্টোরেজ বাড়ানো','স্ক্রিন উজ্জ্বল করা'],0],
+['Cloud computing কী?',['ইন্টারনেটের মাধ্যমে কম্পিউটিং সেবা ব্যবহার','শুধু অফলাইন হিসাব','প্রিন্টার প্রযুক্তি','কীবোর্ডের ধরন'],0],
+['Machine Learning কী?',['ডেটা থেকে প্যাটার্ন শিখে সিস্টেমকে কাজ করানো','শুধু ম্যানুয়াল টাইপিং','হার্ডওয়্যার মেরামত','ফাইল কপি করা'],0],
+['AI-এর একটি ব্যবহার কোনটি?',['ভয়েস অ্যাসিস্ট্যান্ট','কেবল ক্যালকুলেটর','কেবল কীবোর্ড','কেবল মনিটর'],0],
+['IoT-এর পূর্ণরূপ কী?',['Internet of Things','Input of Technology','Internet of Tools','Interface of Things'],0],
+['Big Data বলতে কী বোঝায়?',['অত্যন্ত বড় ও জটিল ডেটাসেট','একটি ছোট ফাইল','একটি কীবোর্ড','একটি ছবি'],0],
+['Cyber security-এর মূল উদ্দেশ্য কী?',['ডিজিটাল সিস্টেম ও তথ্য সুরক্ষা','কম্পিউটার রং করা','প্রিন্টের গতি বাড়ানো','শুধু গান শোনা'],0],
+['E-commerce কী?',['ইন্টারনেটের মাধ্যমে পণ্য/সেবা কেনাবেচা','ই-মেইল লেখা','অনলাইন গেম','ভিডিও দেখা'],0],
+['QR Code কী ধরনের প্রযুক্তি?',['দ্বিমাত্রিক কোড','অডিও কোড','অ্যানালগ সিগন্যাল','শুধু বারকোড নয়'],0],
+['Unicode কেন ব্যবহৃত হয়?',['বিভিন্ন ভাষার অক্ষরকে মানসম্মতভাবে প্রকাশ করতে','শুধু ছবি সম্পাদনা করতে','শুধু ভিডিও চালাতে','শুধু গেম বানাতে'],0],
+['API-এর পূর্ণরূপ কী?',['Application Programming Interface','Application Process Internet','Advanced Program Input','Automated Programming Index'],0],
+['Version control-এর উদাহরণ কোনটি?',['Git','HTML','HTTP','JPEG'],0]
+]
+},
+Admission:{
+বাংলা:[
+['বাংলা ভাষার মূল উপাদান কোনটি?',['ধ্বনি','বর্ণ','শব্দ','বাক্য'],0],
+['‘সোনার বাংলা’ শব্দবন্ধে ‘সোনার’ কোন পদ?',['বিশেষ্য','বিশেষণ','সর্বনাম','ক্রিয়া'],1],
+['‘আমি’ কোন পুরুষ?',['উত্তম পুরুষ','মধ্যম পুরুষ','নাম পুরুষ','অনির্দিষ্ট পুরুষ'],0],
+['‘অরণ্যে রোদন’ বাগধারার অর্থ কী?',['বনে ভ্রমণ','নিষ্ফল আবেদন','বিপদে পড়া','আনন্দ করা'],1],
+['‘আকাশ-কুসুম’ অর্থ কী?',['সুন্দর ফুল','অসম্ভব কল্পনা','আকাশের তারা','দুর্লভ ফল'],1],
+['‘বিদ্রোহী’ কবিতার কবি কে?',['রবীন্দ্রনাথ ঠাকুর','জীবনানন্দ দাশ','কাজী নজরুল ইসলাম','জসীমউদ্দীন'],2],
+['‘সোনার তরী’ কাব্যের রচয়িতা কে?',['রবীন্দ্রনাথ ঠাকুর','মাইকেল মধুসূদন দত্ত','সুকান্ত ভট্টাচার্য','শামসুর রাহমান'],0],
+['‘অপরিচিতা’ গল্পের লেখক কে?',['শরৎচন্দ্র চট্টোপাধ্যায়','রবীন্দ্রনাথ ঠাকুর','বঙ্কিমচন্দ্র চট্টোপাধ্যায়','মানিক বন্দ্যোপাধ্যায়'],1],
+['‘নবাব সিরাজউদ্দৌলা’ নাটকের রচয়িতা কে?',['সিকান্দার আবু জাফর','মুনীর চৌধুরী','দ্বিজেন্দ্রলাল রায়','সৈয়দ শামসুল হক'],0],
+['‘লালসালু’ উপন্যাসের লেখক কে?',['সৈয়দ ওয়ালীউল্লাহ','আখতারুজ্জামান ইলিয়াস','হুমায়ূন আহমেদ','শওকত ওসমান'],0],
+['যে বাক্যে একটি মাত্র সমাপিকা ক্রিয়া থাকে তাকে কী বলে?',['যৌগিক বাক্য','জটিল বাক্য','সরল বাক্য','মিশ্র বাক্য'],2],
+['‘অতি লোভে তাঁতি নষ্ট’ কী?',['প্রবাদ','উপমা','রূপক','সমাস'],0],
+['‘নীল আকাশ’ কোন সমাসের উদাহরণ?',['দ্বন্দ্ব','কর্মধারয়','বহুব্রীহি','অব্যয়ীভাব'],1],
+['‘রাজপুত্র’ কোন সমাস?',['দ্বিগু','তৎপুরুষ','দ্বন্দ্ব','বহুব্রীহি'],1],
+['‘যিনি অন্যের উপকার করেন’—এক কথায় কী?',['পরোপকারী','স্বার্থপর','দয়ালু','অতিথিপরায়ণ'],0],
+['‘যে দেশকে ভালোবাসে’—এক কথায় কী?',['দেশদ্রোহী','দেশপ্রেমিক','দেশচারী','দেশান্তরী'],1],
+['বাংলা বর্ণমালায় স্বরবর্ণ কতটি?',['৯টি','১০টি','১১টি','১২টি'],2],
+['‘কলম দিয়ে লিখি’ বাক্যে ‘কলম দিয়ে’ কোন কারক?',['কর্তৃকারক','কর্মকারক','করণকারক','অধিকরণকারক'],2],
+['‘বাড়িতে’ শব্দে কোন বিভক্তি আছে?',['এ','তে','কে','র'],1],
+['‘সে দ্রুত দৌড়ায়’ বাক্যে ‘দ্রুত’ কী?',['বিশেষ্য','বিশেষণ','ক্রিয়াবিশেষণ','সর্বনাম'],2],
+['‘তুমি কি যাবে?’ কোন ধরনের বাক্য?',['বিবৃতিমূলক','প্রশ্নবোধক','অনুজ্ঞাসূচক','বিস্ময়সূচক'],1],
+['‘বাহ! কী সুন্দর!’ কোন ধরনের বাক্য?',['প্রশ্নবোধক','বিস্ময়সূচক','আদেশসূচক','নেতিবাচক'],1],
+['‘সত্য’ শব্দের বিপরীত শব্দ কোনটি?',['ন্যায়','মিথ্যা','শুদ্ধ','সঠিক'],1],
+['‘অন্ধকার’ শব্দের বিপরীত কোনটি?',['কালো','আলো','রাত্রি','ছায়া'],1],
+['‘সূর্য’ শব্দের সমার্থক কোনটি?',['রবি','শশী','ধরা','নিশি'],0],
+['‘চাঁদ’ শব্দের সমার্থক কোনটি?',['রবি','শশী','অনল','পবন'],1],
+['‘মাথায় হাত দেওয়া’ বাগধারার অর্থ কী?',['আনন্দ করা','বিপদে পড়া','অনুতপ্ত হওয়া','ঘুমানো'],2],
+['‘হাত গুটিয়ে বসা’ অর্থ কী?',['কাজে ব্যস্ত থাকা','নিষ্ক্রিয় থাকা','দ্রুত কাজ করা','ভ্রমণ করা'],1],
+['‘আমরা খেলছি’ বাক্যে ক্রিয়াটি কোন কাল নির্দেশ করে?',['বর্তমান ঘটমান','অতীত','ভবিষ্যৎ','পুরাঘটিত অতীত'],0],
+['‘সে স্কুলে যাবে’ বাক্যে ‘স্কুলে’ কোন কারক?',['অধিকরণ','করণ','কর্তৃ','সম্প্রদান'],0]
+],
+ইংরেজি:[
+['Choose the correct article: ___ apple a day keeps the doctor away.',['A','An','The','No article'],1],
+['What is the plural of “child”?',['Childs','Childes','Children','Childrens'],2],
+['Choose the correct form: He ___ to school every day.',['go','goes','going','gone'],1],
+['What is the opposite of “honest”?',['Truthful','Sincere','Dishonest','Loyal'],2],
+['What is the synonym of “rapid”?',['Slow','Quick','Weak','Late'],1],
+['Which one is a noun?',['Beautiful','Beauty','Beautify','Beautifully'],1],
+['Choose the correct preposition: He is good ___ English.',['in','at','on','for'],1],
+['Past tense of “go” is—',['goed','gone','went','going'],2],
+['“I am reading” is which tense?',['Present Indefinite','Present Continuous','Past Continuous','Present Perfect'],1],
+['Choose the correct sentence.',['He do not know me.','He does not know me.','He does not knows me.','He not know me.'],1],
+['“Honesty is the best policy.” The word “Honesty” is a—',['Verb','Adjective','Noun','Adverb'],2],
+['Which is a pronoun?',['Book','Quickly','They','Beautiful'],2],
+['Which is an adjective?',['Beauty','Beautiful','Beautifully','Beautify'],1],
+['Which is an adverb?',['Slow','Slowness','Slowly','Slowed'],2],
+['“The sun rises in the east.” This is—',['Interrogative','Assertive','Imperative','Exclamatory'],1],
+['Choose the correct comparative form of “good”.',['Gooder','More good','Better','Best'],2],
+['Superlative form of “bad” is—',['Badder','Worse','Worst','Most bad'],2],
+['“Can” expresses—',['Ability','Past habit','Possession only','Time'],0],
+['Which one is a conjunction?',['And','Very','Under','Beautiful'],0],
+['Choose the correct spelling.',['Neccessary','Necessary','Necesary','Nessessary'],1],
+['“He has finished the work.” The tense is—',['Present Perfect','Past Perfect','Present Continuous','Future Perfect'],0],
+['Passive voice of “They play football.”',['Football played by them.','Football is played by them.','Football was played by them.','Football has played by them.'],1],
+['Indirect speech: He said, “I am ill.”',['He said that I am ill.','He said that he was ill.','He says that he was ill.','He said he is ill yesterday.'],1],
+['“What a beautiful flower!” is—',['Assertive','Imperative','Exclamatory','Interrogative'],2],
+['Which word means “begin”?',['End','Start','Stop','Close'],1],
+['Choose the correct tag: You are a student, ___?',['are you','aren’t you','isn’t you','don’t you'],1],
+['“Too much” means—',['Very little','More than necessary','Exactly enough','Nothing'],1],
+['Which is a modal verb?',['Have','Must','Do','Be'],1],
+['Choose the correct sentence.',['She can sings.','She can sing.','She can singing.','She can to sing.'],1],
+['“Since” is commonly used with a—',['Point of time','Period only','Person only','Place only'],0]
+],
+ICT:[
+['কম্পিউটারের মস্তিষ্ক বলা হয় কোনটিকে?',['RAM','CPU','Hard Disk','Monitor'],1],
+['CPU-এর পূর্ণরূপ কী?',['Central Processing Unit','Computer Primary Unit','Central Program Utility','Control Processing User'],0],
+['RAM কী ধরনের মেমোরি?',['স্থায়ী','অস্থায়ী','শুধু-পঠন','বহিঃস্থ'],1],
+['HTML-এর পূর্ণরূপ কী?',['Hyper Text Markup Language','High Text Machine Language','Hyperlink Text Management Language','Home Tool Markup Language'],0],
+['CSS মূলত কী কাজে ব্যবহৃত হয়?',['ডেটাবেস তৈরি','ওয়েবপেজের ডিজাইন/স্টাইল','ভিডিও সম্পাদনা','অ্যান্টিভাইরাস'],1],
+['JavaScript সাধারণত কী কাজে ব্যবহৃত হয়?',['ওয়েবপেজে ইন্টার‌্যাকশন','শুধু ছবি আঁকা','শুধু ডেটা সংরক্ষণ','প্রিন্টিং'],0],
+['IP-এর পূর্ণরূপ কী?',['Internet Protocol','Internal Program','Internet Process','Input Protocol'],0],
+['WWW-এর পূর্ণরূপ কী?',['World Wide Web','World Web Window','Wide World Wire','Web World Wide'],0],
+['URL-এর পূর্ণরূপ কী?',['Uniform Resource Locator','Universal Record Link','Uniform Router Language','User Resource Line'],0],
+['ই-মেইল পাঠাতে কোনটি প্রয়োজন?',['ইন্টারনেট সংযোগ','শুধু প্রিন্টার','শুধু স্ক্যানার','কেবল ক্যালকুলেটর'],0],
+['১ Byte সমান কত Bit?',['৪','৮','১৬','৩২'],1],
+['Binary number system-এর ভিত্তি কত?',['২','৮','১০','১৬'],0],
+['Decimal number system-এর ভিত্তি কত?',['২','৮','১০','১৬'],2],
+['Hexadecimal system-এর ভিত্তি কত?',['২','৮','১০','১৬'],3],
+['LAN-এর পূর্ণরূপ কী?',['Local Area Network','Large Area Network','Long Access Network','Local Access Node'],0],
+['WAN-এর পূর্ণরূপ কী?',['Wide Area Network','Web Area Node','Wireless Access Network','World Access Number'],0],
+['Router-এর প্রধান কাজ কী?',['নেটওয়ার্কের মধ্যে ডেটা রাউট করা','শুধু ছবি দেখানো','শুধু শব্দ রেকর্ড','বিদ্যুৎ তৈরি'],0],
+['Phishing কী?',['ডেটা চুরি করার প্রতারণামূলক কৌশল','এক ধরনের প্রিন্টার','ফাইল কমপ্রেশন','অপারেটিং সিস্টেম'],0],
+['Antivirus-এর কাজ কী?',['ম্যালওয়্যার শনাক্ত/প্রতিরোধ করা','ইন্টারনেটের গতি বাড়ানো','মনিটর বড় করা','কীবোর্ড মেরামত'],0],
+['Database কী?',['সুশৃঙ্খলভাবে সংরক্ষিত তথ্যের সংগ্রহ','শুধু ছবি','শুধু ভিডিও','একটি কীবোর্ড'],0],
+['SQL সাধারণত কী কাজে ব্যবহৃত হয়?',['ডেটাবেসের সঙ্গে কাজ করতে','ভিডিও চালাতে','গ্রাফিক্স আঁকতে','অডিও রেকর্ড করতে'],0],
+['Cloud computing বলতে কী বোঝায়?',['ইন্টারনেটভিত্তিক কম্পিউটিং সেবা','শুধু আবহাওয়া দেখা','কেবল অফলাইন গেম','প্রিন্টারের কাজ'],0],
+['Two-factor authentication কী বাড়ায়?',['নিরাপত্তা','স্ক্রিনের আকার','ইন্টারনেটের তার','ব্যাটারির ভোল্টেজ'],0],
+['PDF-এর পূর্ণরূপ কী?',['Portable Document Format','Public Data File','Personal Document Form','Print Data Format'],0],
+['OCR প্রযুক্তি কী করতে পারে?',['ছবির লেখা শনাক্ত করে টেক্সটে রূপান্তর','শুধু গান বাজায়','শুধু ভিডিও কাটে','নেটওয়ার্ক বন্ধ করে'],0],
+['Bluetooth কী ধরনের প্রযুক্তি?',['স্বল্প দূরত্বের বেতার যোগাযোগ','উপগ্রহ যোগাযোগ','তারযুক্ত LAN','ফাইবার অপটিক কেবল'],0],
+['USB-এর পূর্ণরূপ কী?',['Universal Serial Bus','United System Board','Universal Storage Block','User Serial Base'],0],
+['Operating System-এর উদাহরণ কোনটি?',['Windows','HTML','HTTP','USB'],0],
+['Search engine-এর উদাহরণ কোনটি?',['Google','Windows','Bluetooth','Excel'],0],
+['Artificial Intelligence-এর সংক্ষিপ্ত রূপ কী?',['AR','AI','IT','AL'],1]
+]}
+};
+
+function renderExams(){
+ const box=document.getElementById('examGrid');box.innerHTML='';
+ [['SSC','📚','মাধ্যমিক'],['HSC','📖','উচ্চ মাধ্যমিক'],['Admission','🎓','ভর্তি পরীক্ষা']].forEach(([key,emo,sub])=>{
+  const b=document.createElement('button');b.className='text-left p-5 rounded-2xl border-2 border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 hover:border-indigo-500 transition-all';b.innerHTML=`<div class="text-3xl">${emo}</div><div class="font-black text-xl mt-3">${key}</div><div class="text-xs text-slate-500 mt-1">${sub}</div>`;b.onclick=()=>selectExam(key,b);box.appendChild(b);
+ });
+}
+function selectExam(key,el){selectedExam=key;selectedGroup='';selectedSubject='';document.querySelectorAll('#examGrid button').forEach(b=>b.classList.remove('border-indigo-600','bg-indigo-50','dark:bg-indigo-950/30'));el.classList.add('border-indigo-600','bg-indigo-50','dark:bg-indigo-950/30');document.getElementById('groupTitle').textContent=key==='Admission'?'২. ভর্তি ইউনিট নির্বাচন করুন':'২. '+key+' বিভাগের গ্রুপ নির্বাচন করুন';renderGroups();document.getElementById('groupWrap').classList.remove('hidden');document.getElementById('subjectWrap').classList.add('hidden');document.getElementById('groupWrap').scrollIntoView({behavior:'smooth',block:'center'});}
+function renderGroups(){const box=document.getElementById('groupGrid');box.innerHTML='';exams[selectedExam].forEach(([name,emo])=>{const b=document.createElement('button');b.className='p-5 rounded-2xl border-2 border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 font-bold hover:border-violet-500 transition-all';b.innerHTML=`<div class="text-3xl">${emo}</div><div class="mt-2">${name}</div>`;b.onclick=()=>selectGroup(name,b);box.appendChild(b);});}
+function selectGroup(name,el){selectedGroup=name;document.querySelectorAll('#groupGrid button').forEach(b=>b.classList.remove('border-violet-600','bg-violet-50','dark:bg-violet-950/30'));el.classList.add('border-violet-600','bg-violet-50','dark:bg-violet-950/30');renderSubjects();document.getElementById('subjectWrap').classList.remove('hidden');document.getElementById('subjectWrap').scrollIntoView({behavior:'smooth',block:'center'});}
+function renderSubjects(){const box=document.getElementById('subjectGrid');box.innerHTML='';subjects.forEach(s=>{const b=document.createElement('button');b.className='subject-btn p-5 rounded-2xl border-2 border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 font-extrabold flex flex-col items-center gap-2 transition-all hover:border-indigo-500';b.innerHTML=`<i class="fa-solid ${icon[s]} text-2xl"></i><span>${s}</span><small class="font-normal opacity-60">৩০টি MCQ</small>`;b.onclick=()=>startExam(s);box.appendChild(b);});}
+function startExam(subject){selectedSubject=subject;const bank=(questionBank[selectedExam]&&questionBank[selectedExam][subject])||questionBank.SSC[subject]||[];questions=bank.map((q,i)=>({id:i+1,text:q[0],options:q[1],correct:q[2]}));answers={};submitted=false;document.getElementById('selectionPage').classList.add('hidden');document.getElementById('resultPage').classList.add('hidden');document.getElementById('examPage').classList.remove('hidden');document.getElementById('examTitle').textContent=`EduBangla Exam — ${subject}`;document.getElementById('examMeta').textContent=`${selectedExam} • ${selectedGroup} • ${subject}`;renderQuestions();startTimer();window.scrollTo({top:0,behavior:'smooth'});}
+function renderQuestions(){const box=document.getElementById('questionsContainer');box.innerHTML='';questions.forEach((q,i)=>{const card=document.createElement('div');card.id='q-'+q.id;card.className='question-card bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm p-5 sm:p-7';card.innerHTML=`<div class="flex gap-3 items-start"><div class="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 font-black flex items-center justify-center flex-shrink-0">${toBn(q.id)}</div><h2 class="font-extrabold text-base sm:text-lg leading-7">${q.text}</h2></div><div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-5">${q.options.map((op,j)=>`<button type="button" class="option w-full text-left flex items-center gap-3 p-3.5 sm:p-4 rounded-2xl border-2 border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 font-semibold" data-q="${q.id}" data-opt="${j}"><span class="letter w-8 h-8 rounded-lg bg-slate-200 dark:bg-slate-800 flex items-center justify-center font-black flex-shrink-0">${bn[j]}</span><span>${op}</span></button>`).join('')}</div>`;box.appendChild(card);card.querySelectorAll('.option').forEach(btn=>btn.onclick=()=>chooseAnswer(Number(btn.dataset.q),Number(btn.dataset.opt),btn));});updateProgress();}
+function chooseAnswer(qid,opt,btn){if(submitted)return;answers[qid]=opt;document.querySelectorAll(`.option[data-q="${qid}"]`).forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');updateProgress();}
+function updateProgress(){const n=Object.keys(answers).length,total=questions.length||30;document.getElementById('progressText').textContent=`${toBn(n)}/${toBn(total)} উত্তর দেওয়া হয়েছে`;document.getElementById('progressBar').style.width=(n/total*100)+'%';document.getElementById('unansweredText').textContent=n<total?`${toBn(total-n)}টি প্রশ্নের উত্তর দেওয়া হয়নি। চাইলে এখনই জমা দিতে পারবেন।`:'সব প্রশ্নের উত্তর দেওয়া হয়েছে। এখন পরীক্ষা জমা দিতে পারেন।';}
+function confirmSubmit(){const n=Object.keys(answers).length;if(n<questions.length&&!confirm(`${toBn(questions.length-n)}টি প্রশ্নের উত্তর দেওয়া হয়নি। তবুও পরীক্ষা জমা দেবেন?`))return;submitExam();}
+function submitExam(){submitted=true;clearInterval(timerHandle);let correct=0;questions.forEach(q=>{if(answers[q.id]===q.correct)correct++;});const wrong=questions.length-correct;document.getElementById('examPage').classList.add('hidden');document.getElementById('resultPage').classList.remove('hidden');document.getElementById('resultSubject').textContent=`${selectedExam} • ${selectedGroup} • ${selectedSubject}`;document.getElementById('resultTotal').textContent=toBn(questions.length);document.getElementById('resultCorrect').textContent=toBn(correct);document.getElementById('resultWrong').textContent=toBn(wrong);document.getElementById('resultPercent').textContent=Math.round(correct/questions.length*100)+'%';window.scrollTo({top:0,behavior:'smooth'});}
+function reviewAnswers(){const box=document.getElementById('reviewContainer');box.innerHTML='';box.classList.remove('hidden');questions.forEach(q=>{const chosen=answers[q.id];const ok=chosen===q.correct;const div=document.createElement('div');div.className=`p-4 rounded-2xl border-2 ${ok?'result-correct':'result-wrong'}`;div.innerHTML=`<div class="font-bold">${toBn(q.id)}. ${q.text}</div><div class="text-sm mt-2">আপনার উত্তর: <b>${chosen==null?'দেওয়া হয়নি':bn[chosen]+'. '+q.options[chosen]}</b></div><div class="text-sm mt-1">সঠিক উত্তর: <b>${bn[q.correct]}. ${q.options[q.correct]}</b></div>`;box.appendChild(div);});box.scrollIntoView({behavior:'smooth',block:'start'});}
+function backToSelection(){clearInterval(timerHandle);document.getElementById('examPage').classList.add('hidden');document.getElementById('resultPage').classList.add('hidden');document.getElementById('selectionPage').classList.remove('hidden');document.getElementById('reviewContainer').classList.add('hidden');window.scrollTo({top:0,behavior:'smooth'});}
+function startTimer(){clearInterval(timerHandle);timerSeconds=1200;paintTimer();timerHandle=setInterval(()=>{timerSeconds--;paintTimer();if(timerSeconds<=0){clearInterval(timerHandle);alert('সময় শেষ! পরীক্ষা জমা দেওয়া হচ্ছে।');submitExam();}},1000);}
+function paintTimer(){const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById('timer').textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;}
+function toBn(n){return String(n).replace(/\d/g,d=>bnDigits[d]);}const bnDigits=['০','১','২','৩','৪','৫','৬','৭','৮','৯'];
+function toggleTheme(){document.documentElement.classList.toggle('dark');localStorage.setItem('edubangla-theme',document.documentElement.classList.contains('dark')?'dark':'light');document.getElementById('themeIcon').className=document.documentElement.classList.contains('dark')?'fa-solid fa-sun':'fa-solid fa-moon';}
+if(localStorage.getItem('edubangla-theme')==='dark'){document.documentElement.classList.add('dark');document.getElementById('themeIcon').className='fa-solid fa-sun';}
+renderExams();
+</script>
+</body>
+</html>
